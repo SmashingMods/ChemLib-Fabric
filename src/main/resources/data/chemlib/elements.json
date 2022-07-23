@@ -1,0 +1,1280 @@
+{
+  "elements": [
+    {
+      "name": "hydrogen",
+      "atomic_number": 1,
+      "abbreviation": "H",
+      "group": "1",
+      "period": "1",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "B3DFFF"
+    },
+    {
+      "name": "helium",
+      "atomic_number": 2,
+      "abbreviation": "He",
+      "group": "18",
+      "period": "1",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "FFFDCC"
+    },
+    {
+      "name": "lithium",
+      "atomic_number": 3,
+      "abbreviation": "Li",
+      "group": "1",
+      "period": "2",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "8F243E"
+    },
+    {
+      "name": "beryllium",
+      "atomic_number": 4,
+      "abbreviation": "Be",
+      "group": "2",
+      "period": "2",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "21A17E"
+    },
+    {
+      "name": "boron",
+      "atomic_number": 5,
+      "abbreviation": "B",
+      "group": "13",
+      "period": "2",
+      "matter_state": "solid",
+      "metal_type": "metalloid",
+      "color": "3E4A60"
+    },
+    {
+      "name": "carbon",
+      "atomic_number": 6,
+      "abbreviation": "C",
+      "group": "14",
+      "period": "2",
+      "matter_state": "solid",
+      "metal_type": "nonmetal",
+      "color": "282828"
+    },
+    {
+      "name": "nitrogen",
+      "atomic_number": 7,
+      "abbreviation": "N",
+      "group": "15",
+      "period": "2",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "E1B4B8"
+    },
+    {
+      "name": "oxygen",
+      "atomic_number": 8,
+      "abbreviation": "O",
+      "group": "16",
+      "period": "2",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "84CFFE"
+    },
+    {
+      "name": "fluorine",
+      "atomic_number": 9,
+      "abbreviation": "F",
+      "group": "17",
+      "period": "2",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "B4D14B"
+    },
+    {
+      "name": "neon",
+      "atomic_number": 10,
+      "abbreviation": "Ne",
+      "group": "18",
+      "period": "2",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "F4BC27"
+    },
+    {
+      "name": "sodium",
+      "atomic_number": 11,
+      "abbreviation": "Na",
+      "group": "1",
+      "period": "3",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "d3c683"
+    },
+    {
+      "name": "magnesium",
+      "atomic_number": 12,
+      "abbreviation": "Mg",
+      "group": "2",
+      "period": "3",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "EDADEC"
+    },
+    {
+      "name": "aluminum",
+      "atomic_number": 13,
+      "abbreviation": "Al",
+      "group": "13",
+      "period": "3",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "D9D9D9"
+    },
+    {
+      "name": "silicon",
+      "atomic_number": 14,
+      "abbreviation": "Si",
+      "group": "14",
+      "period": "3",
+      "matter_state": "solid",
+      "metal_type": "metalloid",
+      "color": "adb279"
+    },
+    {
+      "name": "phosphorus",
+      "atomic_number": 15,
+      "abbreviation": "P",
+      "group": "15",
+      "period": "3",
+      "matter_state": "solid",
+      "metal_type": "nonmetal",
+      "color": "d7c38a"
+    },
+    {
+      "name": "sulfur",
+      "atomic_number": 16,
+      "abbreviation": "S",
+      "group": "16",
+      "period": "3",
+      "matter_state": "solid",
+      "metal_type": "nonmetal",
+      "color": "b5a510"
+    },
+    {
+      "name": "chlorine",
+      "atomic_number": 17,
+      "abbreviation": "Cl",
+      "group": "17",
+      "period": "3",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "8dd41c"
+    },
+    {
+      "name": "argon",
+      "atomic_number": 18,
+      "abbreviation": "Ar",
+      "group": "18",
+      "period": "3",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "6711A3"
+    },
+    {
+      "name": "potassium",
+      "atomic_number": 19,
+      "abbreviation": "K",
+      "group": "1",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "c6985f"
+    },
+    {
+      "name": "calcium",
+      "atomic_number": 20,
+      "abbreviation": "Ca",
+      "group": "2",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "dbd2c7"
+    },
+    {
+      "name": "scandium",
+      "atomic_number": 21,
+      "abbreviation": "Sc",
+      "group": "3",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "fcff63"
+    },
+    {
+      "name": "titanium",
+      "atomic_number": 22,
+      "abbreviation": "Ti",
+      "group": "4",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "6375ff"
+    },
+    {
+      "name": "vanadium",
+      "atomic_number": 23,
+      "abbreviation": "V",
+      "group": "5",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "647689"
+    },
+    {
+      "name": "chromium",
+      "atomic_number": 24,
+      "abbreviation": "Cr",
+      "group": "6",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "481a5d"
+    },
+    {
+      "name": "manganese",
+      "atomic_number": 25,
+      "abbreviation": "Mn",
+      "group": "7",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "c7a385"
+    },
+    {
+      "name": "iron",
+      "atomic_number": 26,
+      "abbreviation": "Fe",
+      "group": "8",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "has_item": true,
+      "color": "34302e"
+    },
+    {
+      "name": "cobalt",
+      "atomic_number": 27,
+      "abbreviation": "Co",
+      "group": "9",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "6666FF"
+    },
+    {
+      "name": "nickel",
+      "atomic_number": 28,
+      "abbreviation": "Ni",
+      "group": "10",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "62764c"
+    },
+    {
+      "name": "copper",
+      "atomic_number": 29,
+      "abbreviation": "Cu",
+      "group": "11",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "has_item": true,
+      "color": "956853"
+    },
+    {
+      "name": "zinc",
+      "atomic_number": 30,
+      "abbreviation": "Zn",
+      "group": "12",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "a0997d"
+    },
+    {
+      "name": "gallium",
+      "atomic_number": 31,
+      "abbreviation": "Ga",
+      "group": "13",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "a1a8c1"
+    },
+    {
+      "name": "germanium",
+      "atomic_number": 32,
+      "abbreviation": "Ge",
+      "group": "14",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metalloid",
+      "color": "ccd4c0"
+    },
+    {
+      "name": "arsenic",
+      "atomic_number": 33,
+      "abbreviation": "As",
+      "group": "15",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "metalloid",
+      "color": "8c3f31"
+    },
+    {
+      "name": "selenium",
+      "atomic_number": 34,
+      "abbreviation": "Se",
+      "group": "16",
+      "period": "4",
+      "matter_state": "solid",
+      "metal_type": "nonmetal",
+      "color": "077c81"
+    },
+    {
+      "name": "bromine",
+      "atomic_number": 35,
+      "abbreviation": "Br",
+      "group": "17",
+      "period": "4",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 0,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "a61601"
+    },
+    {
+      "name": "krypton",
+      "atomic_number": 36,
+      "abbreviation": "Kr",
+      "group": "18",
+      "period": "4",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "bce2ef"
+    },
+    {
+      "name": "rubidium",
+      "atomic_number": 37,
+      "abbreviation": "Rb",
+      "group": "1",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "ee88fd"
+    },
+    {
+      "name": "strontium",
+      "atomic_number": 38,
+      "abbreviation": "Sr",
+      "group": "2",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "536998"
+    },
+    {
+      "name": "yttrium",
+      "atomic_number": 39,
+      "abbreviation": "Y",
+      "group": "3",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "b366c4"
+    },
+    {
+      "name": "zirconium",
+      "atomic_number": 40,
+      "abbreviation": "Zr",
+      "group": "4",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "d3bb8f"
+    },
+    {
+      "name": "niobium",
+      "atomic_number": 41,
+      "abbreviation": "Nb",
+      "group": "5",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "734d54"
+    },
+    {
+      "name": "molybdenum",
+      "atomic_number": 42,
+      "abbreviation": "Mo",
+      "group": "6",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "6d7e9a"
+    },
+    {
+      "name": "technetium",
+      "atomic_number": 43,
+      "abbreviation": "Tc",
+      "group": "7",
+      "period": "5",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "758489"
+    },
+    {
+      "name": "ruthenium",
+      "atomic_number": 44,
+      "abbreviation": "Ru",
+      "group": "8",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "715f63"
+    },
+    {
+      "name": "rhodium",
+      "atomic_number": 45,
+      "abbreviation": "Rh",
+      "group": "9",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "827569"
+    },
+    {
+      "name": "palladium",
+      "atomic_number": 46,
+      "abbreviation": "Pd",
+      "group": "10",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "704158"
+    },
+    {
+      "name": "silver",
+      "atomic_number": 47,
+      "abbreviation": "Ag",
+      "group": "11",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "c1c7c7"
+    },
+    {
+      "name": "cadmium",
+      "atomic_number": 48,
+      "abbreviation": "Cd",
+      "group": "12",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "9a2b34"
+    },
+    {
+      "name": "indium",
+      "atomic_number": 49,
+      "abbreviation": "In",
+      "group": "13",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "86847f"
+    },
+    {
+      "name": "tin",
+      "atomic_number": 50,
+      "abbreviation": "Sn",
+      "group": "14",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "46311a"
+    },
+    {
+      "name": "antimony",
+      "atomic_number": 51,
+      "abbreviation": "Sb",
+      "group": "15",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metalloid",
+      "color": "855770"
+    },
+    {
+      "name": "tellurium",
+      "atomic_number": 52,
+      "abbreviation": "Te",
+      "group": "16",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "metalloid",
+      "color": "275b1a"
+    },
+    {
+      "name": "iodine",
+      "atomic_number": 53,
+      "abbreviation": "I",
+      "group": "17",
+      "period": "5",
+      "matter_state": "solid",
+      "metal_type": "nonmetal",
+      "color": "571162"
+    },
+    {
+      "name": "xenon",
+      "atomic_number": 54,
+      "abbreviation": "Xe",
+      "group": "18",
+      "period": "5",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -10,
+        "luminosity": 0,
+        "viscosity": 0
+      },
+      "metal_type": "nonmetal",
+      "color": "2861a7"
+    },
+    {
+      "name": "cesium",
+      "atomic_number": 55,
+      "abbreviation": "Cs",
+      "group": "1",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "cbac2a"
+    },
+    {
+      "name": "barium",
+      "atomic_number": 56,
+      "abbreviation": "Ba",
+      "group": "2",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "c7bca8"
+    },
+    {
+      "name": "lanthanum",
+      "atomic_number": 57,
+      "abbreviation": "La",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "ba9160"
+    },
+    {
+      "name": "cerium",
+      "atomic_number": 58,
+      "abbreviation": "Ce",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "662c5e"
+    },
+    {
+      "name": "praseodymium",
+      "atomic_number": 59,
+      "abbreviation": "Pr",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "73b93d"
+    },
+    {
+      "name": "neodymium",
+      "atomic_number": 60,
+      "abbreviation": "Nd",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "8c696b"
+    },
+    {
+      "name": "promethium",
+      "atomic_number": 61,
+      "abbreviation": "Pm",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "62af0a7"
+    },
+    {
+      "name": "samarium",
+      "atomic_number": 62,
+      "abbreviation": "Sm",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "b7b05c"
+    },
+    {
+      "name": "europium",
+      "atomic_number": 63,
+      "abbreviation": "Eu",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "ce81b3"
+    },
+    {
+      "name": "gadolinium",
+      "atomic_number": 64,
+      "abbreviation": "Gd",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "915536"
+    },
+    {
+      "name": "terbium",
+      "atomic_number": 65,
+      "abbreviation": "Tb",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "8ba754"
+    },
+    {
+      "name": "dysprosium",
+      "atomic_number": 66,
+      "abbreviation": "Dy",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "653f0e"
+    },
+    {
+      "name": "holmium",
+      "atomic_number": 67,
+      "abbreviation": "Ho",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "4d6352"
+    },
+    {
+      "name": "erbium",
+      "atomic_number": 68,
+      "abbreviation": "Er",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "a05768"
+    },
+    {
+      "name": "thulium",
+      "atomic_number": 69,
+      "abbreviation": "Tm",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "179e43"
+    },
+    {
+      "name": "ytterbium",
+      "atomic_number": 70,
+      "abbreviation": "Yb",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "e7e39f"
+    },
+    {
+      "name": "lutetium",
+      "atomic_number": 71,
+      "abbreviation": "Lu",
+      "group": "3",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "954d41"
+    },
+    {
+      "name": "hafnium",
+      "atomic_number": 72,
+      "abbreviation": "Hf",
+      "group": "4",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "243267"
+    },
+    {
+      "name": "tantalum",
+      "atomic_number": 73,
+      "abbreviation": "Ta",
+      "group": "5",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "a81e20"
+    },
+    {
+      "name": "tungsten",
+      "atomic_number": 74,
+      "abbreviation": "W",
+      "group": "6",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "2b313e"
+    },
+    {
+      "name": "rhenium",
+      "atomic_number": 75,
+      "abbreviation": "Re",
+      "group": "7",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "1b1d1b"
+    },
+    {
+      "name": "osmium",
+      "atomic_number": 76,
+      "abbreviation": "Os",
+      "group": "8",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "7599c1"
+    },
+    {
+      "name": "iridium",
+      "atomic_number": 77,
+      "abbreviation": "Ir",
+      "group": "9",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "2f5eef"
+    },
+    {
+      "name": "platinum",
+      "atomic_number": 78,
+      "abbreviation": "Pt",
+      "group": "10",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "d2d3d3"
+    },
+    {
+      "name": "gold",
+      "atomic_number": 79,
+      "abbreviation": "Au",
+      "group": "11",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "has_item": true,
+      "color": "cfac38"
+    },
+    {
+      "name": "mercury",
+      "atomic_number": 80,
+      "abbreviation": "Hg",
+      "group": "12",
+      "period": "6",
+      "matter_state": "liquid",
+      "fluid_attributes": {
+        "density": 1000,
+        "luminosity": 0,
+        "viscosity": 1000
+      },
+      "metal_type": "metal",
+      "color": "9d9f9f"
+    },
+    {
+      "name": "thallium",
+      "atomic_number": 81,
+      "abbreviation": "Tl",
+      "group": "13",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "785445"
+    },
+    {
+      "name": "lead",
+      "atomic_number": 82,
+      "abbreviation": "Pb",
+      "group": "14",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "34465a"
+    },
+    {
+      "name": "bismuth",
+      "atomic_number": 83,
+      "abbreviation": "Bi",
+      "group": "15",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "3d9185"
+    },
+    {
+      "name": "polonium",
+      "atomic_number": 84,
+      "abbreviation": "Po",
+      "group": "16",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "29443f"
+    },
+    {
+      "name": "astatine",
+      "atomic_number": 85,
+      "abbreviation": "At",
+      "group": "17",
+      "period": "6",
+      "matter_state": "solid",
+      "metal_type": "nonmetal",
+      "color": "9fc413"
+    },
+    {
+      "name": "radon",
+      "atomic_number": 86,
+      "abbreviation": "Rn",
+      "group": "18",
+      "period": "6",
+      "matter_state": "gas",
+      "fluid_attributes": {
+        "density": -1000,
+        "luminosity": 0,
+        "viscosity": 1000
+      },
+      "metal_type": "nonmetal",
+      "color": "5fd16a"
+    },
+    {
+      "name": "francium",
+      "atomic_number": 87,
+      "abbreviation": "Fr",
+      "group": "1",
+      "period": "7",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "9a410c"
+    },
+    {
+      "name": "radium",
+      "atomic_number": 88,
+      "abbreviation": "Ra",
+      "group": "2",
+      "period": "7",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "3c9c6f"
+    },
+    {
+      "name": "actinium",
+      "atomic_number": 89,
+      "abbreviation": "Ac",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "7781f9"
+    },
+    {
+      "name": "thorium",
+      "atomic_number": 90,
+      "abbreviation": "Th",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "5f4533"
+    },
+    {
+      "name": "protactinium",
+      "atomic_number": 91,
+      "abbreviation": "Pa",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "3e8863"
+    },
+    {
+      "name": "uranium",
+      "atomic_number": 92,
+      "abbreviation": "U",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "metal_type": "metal",
+      "color": "d1c33e"
+    },
+    {
+      "name": "neptunium",
+      "atomic_number": 93,
+      "abbreviation": "Np",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "657065"
+    },
+    {
+      "name": "plutonium",
+      "atomic_number": 94,
+      "abbreviation": "Pu",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "db6e22"
+    },
+    {
+      "name": "americium",
+      "atomic_number": 95,
+      "abbreviation": "Am",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "ab8040"
+    },
+    {
+      "name": "curium",
+      "atomic_number": 96,
+      "abbreviation": "Cm",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "920133"
+    },
+    {
+      "name": "berkelium",
+      "atomic_number": 97,
+      "abbreviation": "Bk",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "b48b41"
+    },
+    {
+      "name": "californium",
+      "atomic_number": 98,
+      "abbreviation": "Cf",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "b47148"
+    },
+    {
+      "name": "einsteinium",
+      "atomic_number": 99,
+      "abbreviation": "Es",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "1f79ae"
+    },
+    {
+      "name": "fermium",
+      "atomic_number": 100,
+      "abbreviation": "Fm",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "e3cda1"
+    },
+    {
+      "name": "mendelevium",
+      "atomic_number": 101,
+      "abbreviation": "Md",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "1512b4"
+    },
+    {
+      "name": "nobelium",
+      "atomic_number": 102,
+      "abbreviation": "No",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "7e41e8"
+    },
+    {
+      "name": "lawrencium",
+      "atomic_number": 103,
+      "abbreviation": "Lr",
+      "group": "3",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "898a8c"
+    },
+    {
+      "name": "rutherfordium",
+      "atomic_number": 104,
+      "abbreviation": "Rf",
+      "group": "4",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "333236"
+    },
+    {
+      "name": "dubnium",
+      "atomic_number": 105,
+      "abbreviation": "Db",
+      "group": "5",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "ab7a5f"
+    },
+    {
+      "name": "seaborgium",
+      "atomic_number": 106,
+      "abbreviation": "Sg",
+      "group": "6",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "f75320"
+    },
+    {
+      "name": "bohrium",
+      "atomic_number": 107,
+      "abbreviation": "Bh",
+      "group": "7",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "54b889"
+    },
+    {
+      "name": "hassium",
+      "atomic_number": 108,
+      "abbreviation": "Hs",
+      "group": "8",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "8a8951"
+    },
+    {
+      "name": "meitnerium",
+      "atomic_number": 109,
+      "abbreviation": "Mt",
+      "group": "9",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "6f5d3a"
+    },
+    {
+      "name": "darmstadtium",
+      "atomic_number": 110,
+      "abbreviation": "Ds",
+      "group": "10",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "325aa6"
+    },
+    {
+      "name": "roentgenium",
+      "atomic_number": 111,
+      "abbreviation": "Rg",
+      "group": "11",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "80b848"
+    },
+    {
+      "name": "copernicium",
+      "atomic_number": 112,
+      "abbreviation": "Cn",
+      "group": "12",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "e39349"
+    },
+    {
+      "name": "nihonium",
+      "atomic_number": 113,
+      "abbreviation": "Nh",
+      "group": "13",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "5e0009"
+    },
+    {
+      "name": "flerovium",
+      "atomic_number": 114,
+      "abbreviation": "Fl",
+      "group": "14",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "654685"
+    },
+    {
+      "name": "moscovium",
+      "atomic_number": 115,
+      "abbreviation": "Mc",
+      "group": "15",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "18f2ad"
+    },
+    {
+      "name": "livermorium",
+      "atomic_number": 116,
+      "abbreviation": "Lv",
+      "group": "16",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "metal",
+      "color": "487d3b"
+    },
+    {
+      "name": "tennessine",
+      "atomic_number": 117,
+      "abbreviation": "Ts",
+      "group": "17",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "nonmetal",
+      "color": "b0963f"
+    },
+    {
+      "name": "oganesson",
+      "atomic_number": 118,
+      "abbreviation": "Og",
+      "group": "18",
+      "period": "7",
+      "matter_state": "solid",
+      "artificial": true,
+      "metal_type": "nonmetal",
+      "color": "723ec7"
+    }
+  ]
+}

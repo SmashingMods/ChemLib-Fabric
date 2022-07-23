@@ -1,0 +1,6 @@
+{
+  "parent": "chemlib:block/cesium_metal_block",
+  "textures": {
+    "layer0": "chemlib:block/metal_block"
+  }
+}

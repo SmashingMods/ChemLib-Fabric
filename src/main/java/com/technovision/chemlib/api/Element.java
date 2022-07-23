@@ -4,7 +4,7 @@ public interface Element extends Chemical {
 
     int getAtomicNumber();
 
-    int getGroup();
+    int getElementGroup();
 
     int getPeriod();
 
