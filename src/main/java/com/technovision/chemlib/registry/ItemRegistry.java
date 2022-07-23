@@ -14,28 +14,48 @@ import com.technovision.chemlib.common.items.ChemicalBlockItem;
 import com.technovision.chemlib.common.items.ChemicalItem;
 import com.technovision.chemlib.common.items.CompoundItem;
 import com.technovision.chemlib.common.items.ElementItem;
+import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.checkerframework.checker.units.qual.C;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.stream.Stream;
 
 public class ItemRegistry {
 
-    public static final Map<String, ElementItem> ELEMENTS = new HashMap<>();
-    public static final Map<String, CompoundItem> COMPOUNDS = new HashMap<>();
-    public static final Map<String, ChemicalItem> COMPOUND_DUSTS = new HashMap<>();
-    public static final Map<String, ChemicalItem> NUGGETS = new HashMap<>();
-    public static final Map<String, ChemicalItem> INGOTS = new HashMap<>();
-    public static final Map<String, ChemicalItem> PLATES = new HashMap<>();
-    public static final Map<String, ChemicalItem> METAL_DUSTS = new HashMap<>();
+    public static final List<ElementItem> ELEMENTS = new ArrayList<>();
+    public static final List<CompoundItem> COMPOUNDS = new ArrayList<>();
+    public static final List<ChemicalItem> COMPOUND_DUSTS = new ArrayList<>();
+    public static final List<ChemicalItem> NUGGETS = new ArrayList<>();
+    public static final List<ChemicalItem> INGOTS = new ArrayList<>();
+    public static final List<ChemicalItem> PLATES = new ArrayList<>();
+    public static final List<ChemicalItem> METAL_DUSTS = new ArrayList<>();
+    public static final List<ChemicalBlockItem> CHEMICAL_BLOCK_ITEMS = new ArrayList<>();
+    public static final List<BlockItem> LIQUID_BLOCK_ITEMS = new ArrayList<>();
+
+    public static final ItemGroup ELEMENTS_TAB = FabricItemGroupBuilder.build(
+            new Identifier(ChemLib.MOD_ID, "elements"),
+            () -> getElementByName("hydrogen").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR))
+    );
+
+    public static final ItemGroup COMPOUNDS_TAB = FabricItemGroupBuilder.build(
+            new Identifier(ChemLib.MOD_ID, "compounds"),
+            () -> getElementByName("cellulose").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR))
+    );
+    public static final ItemGroup METALS_TAB = FabricItemGroupBuilder.build(
+            new Identifier(ChemLib.MOD_ID, "metals"),
+            () -> getChemicalItemByNameAndType("barium", ChemicalItemType.INGOT).map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR))
+    );
+    public static final ItemGroup MISC_TAB = FabricItemGroupBuilder.build(
+            new Identifier(ChemLib.MOD_ID, "misc"),
+            () -> getChemicalBlockItemByName("radon_lamp_block").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR))
+    );
 
     public static void register() throws IOException {
         // Get element JSON data
@@ -52,27 +72,103 @@ public class ItemRegistry {
         registerCompounds(compounds);
     }
 
-     /*
-        This section defines helper methods for getting specific objects out of the registry.
-     */
+    /*
+       This section defines helper methods for getting specific objects out of the registry.
+    */
 
-    public static void registerItemByType(Item element, Identifier elementIdentifier, ChemicalItemType chemicalItemType, ItemGroup tab) {
-        Identifier identifier = new Identifier(elementIdentifier.getNamespace(), String.format("%s_%s", elementIdentifier.getPath(), chemicalItemType.asString()));
-        ChemicalItem chemicalItem = new ChemicalItem(element, chemicalItemType, new FabricItemSettings().group(tab));
-
-        switch(chemicalItemType) {
-            case COMPOUND -> COMPOUND_DUSTS.put(identifier.getPath(), chemicalItem);
-            case DUST -> METAL_DUSTS.put(identifier.getPath(), chemicalItem);
-            case NUGGET -> NUGGETS.put(identifier.getPath(), chemicalItem);
-            case INGOT -> INGOTS.put(identifier.getPath(), chemicalItem);
-            case PLATE -> PLATES.put(identifier.getPath(), chemicalItem);
-        }
-        Registry.register(Registry.ITEM, identifier, chemicalItem);
+    public static List<Item> getItems() {
+        List<Item> items = new ArrayList<>();
+        items.addAll(getElements());
+        items.addAll(getCompounds());
+        items.addAll(getChemicalItems());
+        items.addAll(getChemicalBlockItems());
+        items.addAll(getLiquidBlockItems());
+        return items;
     }
 
-     /*
-        Elements are built from the Elements json and then everything is registered based on that information.
-     */
+    public static List<ElementItem> getElements() {
+        return ELEMENTS;
+    }
+
+    public static List<CompoundItem> getCompounds() {
+        return COMPOUNDS;
+    }
+
+    public static List<ChemicalItem> getChemicalItems() {
+        List<ChemicalItem> items = new ArrayList<>();
+        for (ChemicalItemType type : ChemicalItemType.values()) {
+            items.addAll(getChemicalItemsByType(type));
+        }
+        return items;
+    }
+
+    public static List<ChemicalBlockItem> getChemicalBlockItems() {
+        return CHEMICAL_BLOCK_ITEMS;
+    }
+
+    public static List<BlockItem> getLiquidBlockItems() {
+        return LIQUID_BLOCK_ITEMS;
+    }
+
+    public static List<ChemicalItem> getChemicalItemsByType(ChemicalItemType chemicalItemType) {
+        return switch (chemicalItemType) {
+            case COMPOUND -> COMPOUND_DUSTS;
+            case DUST -> METAL_DUSTS;
+            case NUGGET -> NUGGETS;
+            case INGOT -> INGOTS;
+            case PLATE -> PLATES;
+        };
+    }
+
+    public static Stream<ElementItem> getElementsByMatterState(MatterState matterState) {
+        return getElements().stream().filter(element -> element.getMatterState().equals(matterState));
+    }
+
+    public static Stream<ElementItem> getElementsByMetalType(MetalType metalType) {
+        return getElements().stream().filter(element -> element.getMetalType().equals(metalType));
+    }
+
+    public static Optional<ElementItem> getElementByName(String name) {
+        return getElements().stream().filter(element -> element.getChemicalName().equals(name)).findFirst();
+    }
+
+    public static Optional<ElementItem> getElementByAtomicNumber(int atomicNumber) {
+        return getElements().stream().filter(element -> element.getAtomicNumber() == atomicNumber).findFirst();
+    }
+
+    public static Optional<CompoundItem> getCompoundByName(String name) {
+        return getCompounds().stream().filter(compound -> compound.getChemicalName().equals(name)).findFirst();
+    }
+
+    public static Optional<ChemicalItem> getChemicalItemByNameAndType(String name, ChemicalItemType chemicalItemType) {
+        return getChemicalItemsByType(chemicalItemType)
+                .stream()
+                .filter(item -> item.getItemType().equals(chemicalItemType))
+                .filter(item -> item.getChemical().getChemicalName().equals(name))
+                .findFirst();
+    }
+
+    public static Optional<ChemicalBlockItem> getChemicalBlockItemByName(String name) {
+        return CHEMICAL_BLOCK_ITEMS.stream().filter(item -> Objects.equals(Objects.requireNonNull(item.toString()), name)).findFirst();
+    }
+
+    /*
+       Elements are built from the Elements json and then everything is registered based on that information.
+    */
+
+     public static void registerItemByType(Item element, Identifier elementIdentifier, ChemicalItemType chemicalItemType, ItemGroup tab) {
+         Identifier identifier = new Identifier(elementIdentifier.getNamespace(), String.format("%s_%s", elementIdentifier.getPath(), chemicalItemType.asString()));
+         ChemicalItem chemicalItem = new ChemicalItem(element, chemicalItemType, new FabricItemSettings().group(tab));
+
+         switch(chemicalItemType) {
+             case COMPOUND -> COMPOUND_DUSTS.add(chemicalItem);
+             case DUST -> METAL_DUSTS.add(chemicalItem);
+             case NUGGET -> NUGGETS.add(chemicalItem);
+             case INGOT -> INGOTS.add(chemicalItem);
+             case PLATE -> PLATES.add(chemicalItem);
+         }
+         Registry.register(Registry.ITEM, identifier, chemicalItem);
+     }
 
     private static void registerElements(JsonObject data) {
         for (JsonElement jsonElement : data.getAsJsonArray("elements")) {
@@ -90,7 +186,7 @@ public class ItemRegistry {
             ElementItem element = new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color);
             Identifier elementIdentifier = new Identifier(ChemLib.MOD_ID, elementName);
             Registry.register(Registry.ITEM, elementIdentifier, element);
-            ELEMENTS.put(elementName, element);
+            ELEMENTS.add(element);
 
             if (!artificial) {
                 switch (matterState) {
@@ -99,13 +195,13 @@ public class ItemRegistry {
                         if (!hasItem) {
                             if (metalType == MetalType.METAL) {
                                 // Register metal items & blocks
-                                registerItemByType(element, elementIdentifier, ChemicalItemType.NUGGET, ChemLib.METALS_TAB);
-                                registerItemByType(element, elementIdentifier, ChemicalItemType.INGOT, ChemLib.METALS_TAB);
-                                registerItemByType(element, elementIdentifier, ChemicalItemType.PLATE, ChemLib.METALS_TAB);
+                                registerItemByType(element, elementIdentifier, ChemicalItemType.NUGGET, METALS_TAB);
+                                registerItemByType(element, elementIdentifier, ChemicalItemType.INGOT, METALS_TAB);
+                                registerItemByType(element, elementIdentifier, ChemicalItemType.PLATE, METALS_TAB);
                                 registerChemicalBlock(elementIdentifier, ChemicalBlockType.METAL);
                             }
                             // Register metal dust
-                            registerItemByType(element, elementIdentifier, ChemicalItemType.DUST, ChemLib.METALS_TAB);
+                            registerItemByType(element, elementIdentifier, ChemicalItemType.DUST, METALS_TAB);
                         }
                     }
                     case LIQUID, GAS -> {
@@ -168,13 +264,13 @@ public class ItemRegistry {
             CompoundItem compoundItem = new CompoundItem(compoundName, matterState, componentMap, description, color);
             Identifier compoundIdentifier = new Identifier(ChemLib.MOD_ID, compoundName);
             Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, compoundName), compoundItem);
-            COMPOUNDS.put(compoundName, compoundItem);
+            COMPOUNDS.add(compoundItem);
 
             switch (matterState) {
                 case SOLID -> {
                     boolean hasItem = object.get("has_item").getAsBoolean();
                     if (!hasItem) {
-                        registerItemByType(compoundItem, compoundIdentifier, ChemicalItemType.COMPOUND, ChemLib.COMPOUNDS_TAB);
+                        registerItemByType(compoundItem, compoundIdentifier, ChemicalItemType.COMPOUND, COMPOUNDS_TAB);
                     }
                 }
                 case LIQUID, GAS -> {
@@ -213,11 +309,12 @@ public class ItemRegistry {
     private static void registerChemicalBlock(Identifier chemical, ChemicalBlockType type) {
         Identifier identifier = new Identifier(ChemLib.MOD_ID, String.format("%s_metal_block", chemical.getPath()));
         FabricItemSettings settings = new FabricItemSettings();
-        if (type == ChemicalBlockType.METAL) settings.group(ChemLib.METALS_TAB);
-        else settings.group(ChemLib.MISC_TAB);
+        if (type == ChemicalBlockType.METAL) settings.group(METALS_TAB);
+        else settings.group(MISC_TAB);
 
         ChemicalBlock chemicalBlock = BlockRegistry.registerBlock(chemical, identifier, type);
         ChemicalBlockItem chemicalBlockItem = new ChemicalBlockItem(chemicalBlock, settings);
         Registry.register(Registry.ITEM, identifier, chemicalBlockItem);
+        CHEMICAL_BLOCK_ITEMS.add(chemicalBlockItem);
     }
 }

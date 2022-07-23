@@ -14,16 +14,15 @@ public class ChemLibClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         // Register item colors
-        ItemRegistry.ELEMENTS.forEach((key, element) -> ColorProviderRegistry.ITEM.register(element::getColor, element));
-        ItemRegistry.COMPOUNDS.forEach((key, element) -> ColorProviderRegistry.ITEM.register(element::getColor, element));
-        ItemRegistry.COMPOUND_DUSTS.forEach((key, element) -> ColorProviderRegistry.ITEM.register(element::getColor, element));
-        ItemRegistry.NUGGETS.forEach((key, element) -> ColorProviderRegistry.ITEM.register(element::getColor, element));
-        ItemRegistry.INGOTS.forEach((key, element) -> ColorProviderRegistry.ITEM.register(element::getColor, element));
-        ItemRegistry.PLATES.forEach((key, element) -> ColorProviderRegistry.ITEM.register(element::getColor, element));
-        ItemRegistry.METAL_DUSTS.forEach((key, element) -> ColorProviderRegistry.ITEM.register(element::getColor, element));
+        ItemRegistry.getElements().forEach(element -> ColorProviderRegistry.ITEM.register(element::getColor, element));
+        ItemRegistry.getCompounds().forEach(compound -> ColorProviderRegistry.ITEM.register(compound::getColor, compound));
+        ItemRegistry.getChemicalItems().forEach(item -> ColorProviderRegistry.ITEM.register(item::getColor, item));
+        ItemRegistry.getChemicalBlockItems().forEach(item -> ColorProviderRegistry.ITEM.register(item::getColor, item));
+        //FluidRegistry.getBuckets().forEach(bucket -> colorHandlerEvent.getItemColors().register((pStack, pTintIndex) -> pTintIndex == 0 ? bucket.getFluid().getAttributes().getColor() : -1, bucket.asItem()));
+        //ItemRegistry.getLiquidBlockItems().forEach(item -> ColorProviderRegistry.ITEM.register((pStack, pTintIndex) -> pTintIndex == 0 ? ((LiquidBlock) item.getBlock()).getFluid().getAttributes().getColor() : -1, item));
 
         // Register block colors
-        //BlockRegistry.getAllChemicalBlocks().forEach((block) -> ColorProviderRegistry.BLOCK.register(block.getBlockColor(new ItemStack(block.asItem()), 0), block));
+        BlockRegistry.getAllChemicalBlocks().forEach((block) -> ColorProviderRegistry.BLOCK.register(block.getBlockColor(new ItemStack(block.asItem()), 0), block));
 
         // Register dynamic item renderer for elements
         ModelLoadingRegistry.INSTANCE.registerModelProvider((resourceManager, identifierConsumer) -> {
@@ -31,6 +30,6 @@ public class ChemLibClient implements ClientModInitializer {
             identifierConsumer.accept(ElementRenderer.LIQUID_MODEL_LOCATION);
             identifierConsumer.accept(ElementRenderer.GAS_MODEL_LOCATION);
         });
-        ItemRegistry.ELEMENTS.forEach((key, element) -> BuiltinItemRendererRegistry.INSTANCE.register(element, new ElementRenderer()));
+        ItemRegistry.ELEMENTS.forEach(element -> BuiltinItemRendererRegistry.INSTANCE.register(element, new ElementRenderer()));
     }
 }

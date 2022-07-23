@@ -1,9 +1,9 @@
 package com.technovision.chemlib.common.items;
 
-import com.technovision.chemlib.ChemLib;
 import com.technovision.chemlib.api.Element;
 import com.technovision.chemlib.api.MatterState;
 import com.technovision.chemlib.api.MetalType;
+import com.technovision.chemlib.registry.ItemRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
@@ -29,7 +29,7 @@ public class ElementItem extends Item implements Element {
     private final int color;
 
     public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, boolean pArtificial, String pColor) {
-        super(new FabricItemSettings().group(ChemLib.ELEMENTS_TAB));
+        super(new FabricItemSettings().group(ItemRegistry.ELEMENTS_TAB));
         this.elementName = pChemicalName;
         this.atomicNumber = pAtomicNumber;
         this.abbreviation = pAbbreviation;

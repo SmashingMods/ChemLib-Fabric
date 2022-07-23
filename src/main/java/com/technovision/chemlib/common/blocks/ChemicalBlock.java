@@ -3,11 +3,13 @@ package com.technovision.chemlib.common.blocks;
 import com.technovision.chemlib.api.Chemical;
 import com.technovision.chemlib.api.ChemicalBlockType;
 import com.technovision.chemlib.api.MatterState;
+import com.technovision.chemlib.registry.ItemRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 public class ChemicalBlock extends Block implements Chemical {
 
@@ -21,9 +23,7 @@ public class ChemicalBlock extends Block implements Chemical {
     }
 
     public Chemical getChemical() {
-        // TODO: Fix
-        //return (Chemical) ForgeRegistries.ITEMS.getValue(chemical);
-        return null;
+        return (Chemical) Registry.ITEM.get(chemical);
     }
 
     public ChemicalBlockType getBlockType() {

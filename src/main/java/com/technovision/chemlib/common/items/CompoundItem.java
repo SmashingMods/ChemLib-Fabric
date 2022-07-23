@@ -1,13 +1,12 @@
 package com.technovision.chemlib.common.items;
 
 import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
-import com.technovision.chemlib.ChemLib;
 import com.technovision.chemlib.api.Chemical;
 import com.technovision.chemlib.api.MatterState;
+import com.technovision.chemlib.registry.ItemRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
@@ -31,7 +30,7 @@ public class CompoundItem extends Item implements Chemical {
     private final int color;
 
     public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor) {
-        super(new FabricItemSettings().group(ChemLib.COMPOUNDS_TAB));
+        super(new FabricItemSettings().group(ItemRegistry.COMPOUNDS_TAB));
         this.compoundName = pCompoundName;
         this.matterState = pMatterState;
         this.components = pComponents;
