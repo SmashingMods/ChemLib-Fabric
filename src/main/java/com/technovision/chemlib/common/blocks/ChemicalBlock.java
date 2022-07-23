@@ -9,18 +9,15 @@ import net.minecraft.client.color.block.BlockColorProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
-import java.util.List;
-
 public class ChemicalBlock extends Block implements Chemical {
 
     private final Identifier chemical;
     private final ChemicalBlockType blockType;
 
-    public ChemicalBlock(Identifier pChemical, ChemicalBlockType pBlockType, List<ChemicalBlock> pList, FabricBlockSettings pProperties) {
-        super(pProperties);
-        this.chemical = pChemical;
-        this.blockType = pBlockType;
-        pList.add(this);
+    public ChemicalBlock(Identifier chemical, ChemicalBlockType blockType, FabricBlockSettings properties) {
+        super(properties);
+        this.chemical = chemical;
+        this.blockType = blockType;
     }
 
     public Chemical getChemical() {

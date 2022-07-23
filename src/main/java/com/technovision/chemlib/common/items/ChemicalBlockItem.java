@@ -2,43 +2,31 @@ package com.technovision.chemlib.common.items;
 
 import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import com.technovision.chemlib.api.Chemical;
-import com.technovision.chemlib.api.ChemicalItemType;
 import com.technovision.chemlib.api.Element;
 import com.technovision.chemlib.api.MatterState;
-import com.technovision.chemlib.registry.ItemRegistry;
-import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
+import com.technovision.chemlib.common.blocks.ChemicalBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.fabricmc.fabric.impl.registry.sync.FabricRegistryClientInit;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.Item;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.List;
-import java.util.Objects;
 
 @MethodsReturnNonnullByDefault
 @ParametersAreNonnullByDefault
-public class ChemicalItem extends Item implements Chemical {
+public class ChemicalBlockItem extends BlockItem implements Chemical {
 
-    private final Chemical chemical;
-    private final ChemicalItemType itemType;
+    private final ChemicalBlock block;
 
-    public ChemicalItem(Chemical chemical, ChemicalItemType chemicalItemType, FabricItemSettings properties) {
-        super(properties);
-        this.chemical = chemical;
-        this.itemType = chemicalItemType;
-    }
-
-    public ChemicalItem(Item item, ChemicalItemType chemicalItemType, FabricItemSettings properties) {
-        this((Chemical) item, chemicalItemType, properties);
+    public ChemicalBlockItem(ChemicalBlock block, FabricItemSettings settings) {
+        super(block, settings);
+        this.block = block;
     }
 
     @Override
@@ -47,45 +35,39 @@ public class ChemicalItem extends Item implements Chemical {
         if (getChemical() instanceof Element element) {
             tooltip.add(Text.literal(String.format("%s (%d)", getAbbreviation(), element.getAtomicNumber())).setStyle(Style.EMPTY.withColor(Formatting.DARK_AQUA)));
             tooltip.add(Text.literal(element.getGroupName()).setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
-        } else {
-            tooltip.add(Text.literal(getAbbreviation()).setStyle(Style.EMPTY.withColor(Formatting.DARK_AQUA)));
         }
     }
 
     public Chemical getChemical() {
-        return chemical;
-    }
-
-    public ChemicalItemType getItemType() {
-        return itemType;
+        return block.getChemical();
     }
 
     @Override
     public String getChemicalName() {
-        return chemical.getChemicalName();
+        return block.getChemicalName();
     }
 
     @Override
     public String getAbbreviation() {
-        return chemical.getAbbreviation();
+        return getChemical().getAbbreviation();
     }
 
     @Override
     public MatterState getMatterState() {
-        return chemical.getMatterState();
+        return getChemical().getMatterState();
     }
 
     @Override
     public String getChemicalDescription() {
-        return "";
+        return getChemical().getChemicalDescription();
     }
 
     @Override
     public int getColor() {
-        return chemical.getColor();
+        return getChemical().getColor();
     }
 
     public int getColor(ItemStack pItemStack, int pTintIndex) {
-        return pTintIndex == 0 ? getColor() : -1;
+        return getColor();
     }
 }
