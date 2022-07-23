@@ -4,9 +4,7 @@ import com.technovision.chemlib.ChemLib;
 import com.technovision.chemlib.common.items.ElementItem;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.render.DiffuseLighting;
-import net.minecraft.client.render.OverlayTexture;
-import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.*;
 import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.client.render.model.json.ModelTransformation;
 import net.minecraft.client.util.ModelIdentifier;
@@ -33,7 +31,6 @@ public class ElementRenderer implements BuiltinItemRendererRegistry.DynamicItemR
             default -> elementModel = SOLID_MODEL_LOCATION;
         }
         BakedModel model = MinecraftClient.getInstance().getItemRenderer().getModels().getModelManager().getModel(elementModel);
-        System.out.println(model.getParticleSprite());
 
         matrices.push();
         matrices.translate(0.5D, 0.5D, 0D);
@@ -44,28 +41,26 @@ public class ElementRenderer implements BuiltinItemRendererRegistry.DynamicItemR
 
         switch (mode) {
             case THIRD_PERSON_LEFT_HAND, THIRD_PERSON_RIGHT_HAND -> {
-                matrices.translate(0, -0.2D, 0.45D);
+                matrices.translate(0, 0D, 0.53D);
+                matrices.scale(0.6F, 0.6F, 0.6F);
             }
             case FIRST_PERSON_LEFT_HAND -> {
-                matrices.translate(-0.025D, -0.025D, 0.75D);
-                matrices.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(25));
-                matrices.multiply(Vec3f.NEGATIVE_X.getDegreesQuaternion(45));
-                matrices.multiply(Vec3f.NEGATIVE_Y.getDegreesQuaternion(80));
+                matrices.translate(0.0D, 0.02D, 0.56D);
+                matrices.multiply(Vec3f.NEGATIVE_Y.getDegreesQuaternion(10));
+                matrices.scale(0.75F, 0.75F, 0.75F);
             }
             case FIRST_PERSON_RIGHT_HAND -> {
-                matrices.translate(-0.20D, -0.05D, 0.75D);
-                matrices.multiply(Vec3f.NEGATIVE_Z.getDegreesQuaternion(25));
-                matrices.multiply(Vec3f.POSITIVE_X.getDegreesQuaternion(45));
-                matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(100));
-                matrices.multiply(Vec3f.NEGATIVE_Z.getDegreesQuaternion(45));
+                matrices.translate(0.0D, 0.10D, 0.56D);
+                matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(10));
+                matrices.scale(0.75F, 0.75F, 0.75F);
             }
             case HEAD -> {
                 matrices.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180));
                 matrices.translate(0, -0.75D, -0.75D);
             }
             case GROUND -> {
-                matrices.translate(0, -0.25D, 0.5D);
-                matrices.scale(1.5F, 1.5F, 1.5F);
+                matrices.translate(0, -0.10, 0.5D);
+                matrices.scale(0.8F, 0.8F, 0.8F);
             }
             case FIXED -> {
                 matrices.multiply(Vec3f.NEGATIVE_Y.getDegreesQuaternion(180));

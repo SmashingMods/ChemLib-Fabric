@@ -27,11 +27,11 @@ public class ChemLib implements ModInitializer {
 
     public static final ItemGroup ELEMENTS_TAB = FabricItemGroupBuilder.build(
             new Identifier(MOD_ID, "elements"),
-            () -> new ItemStack(Items.BLAZE_POWDER)
+            () -> new ItemStack(ItemRegistry.ELEMENTS.get("hydrogen"))
     );
     public static final ItemGroup COMPOUNDS_TAB = FabricItemGroupBuilder.build(
             new Identifier(MOD_ID, "compounds"),
-            () -> new ItemStack(Items.LAVA_BUCKET)
+            () -> new ItemStack(ItemRegistry.COMPOUNDS.get("cellulose"))
     );
     public static final ItemGroup METALS_TAB = FabricItemGroupBuilder.build(
             new Identifier(MOD_ID, "metals"),

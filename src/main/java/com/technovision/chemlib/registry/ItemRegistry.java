@@ -22,8 +22,8 @@ import java.util.*;
 
 public class ItemRegistry {
 
-    public static final Set<ElementItem> ELEMENTS = new HashSet<>();
-    public static final Set<CompoundItem> COMPOUNDS = new HashSet<>();
+    public static final Map<String, ElementItem> ELEMENTS = new HashMap<>();
+    public static final Map<String, CompoundItem> COMPOUNDS = new HashMap<>();
 
     public static void register() throws IOException {
         // Get element JSON data
@@ -65,7 +65,7 @@ public class ItemRegistry {
 
             ElementItem element = new ElementItem(elementName, atomicNumber, abbreviation, group, period, matterState, metalType, artificial, color);
             Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, elementName), element);
-            ELEMENTS.add(element);
+            ELEMENTS.put(elementName, element);
 
             if (!artificial) {
                 switch (matterState) {
@@ -144,7 +144,7 @@ public class ItemRegistry {
 
             CompoundItem compoundItem = new CompoundItem(compoundName, matterState, componentMap, description, color);
             Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, compoundName), compoundItem);
-            COMPOUNDS.add(compoundItem);
+            COMPOUNDS.put(compoundName, compoundItem);
 
             switch (matterState) {
                 case SOLID -> {
