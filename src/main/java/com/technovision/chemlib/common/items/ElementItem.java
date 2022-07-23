@@ -7,7 +7,6 @@ import com.technovision.chemlib.api.MetalType;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
@@ -15,7 +14,6 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nonnull;
 import java.util.List;
 
 public class ElementItem extends Item implements Element {
@@ -124,4 +122,5 @@ public class ElementItem extends Item implements Element {
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return pTintIndex > 0 ? -1 : color;
     }
+
 }

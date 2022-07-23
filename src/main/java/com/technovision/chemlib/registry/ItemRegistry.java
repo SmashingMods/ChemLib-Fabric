@@ -9,7 +9,8 @@ import com.technovision.chemlib.api.MatterState;
 import com.technovision.chemlib.api.MetalType;
 import com.technovision.chemlib.common.items.CompoundItem;
 import com.technovision.chemlib.common.items.ElementItem;
-import net.minecraft.client.color.item.ItemColors;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -17,15 +18,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.*;
 
 public class ItemRegistry {
 
-    public static final List<ElementItem> ELEMENTS = new ArrayList<>();
-    public static final List<CompoundItem> COMPOUNDS = new ArrayList<>();
+    public static final Set<ElementItem> ELEMENTS = new HashSet<>();
+    public static final Set<CompoundItem> COMPOUNDS = new HashSet<>();
 
     public static void register() throws IOException {
         // Get element JSON data
