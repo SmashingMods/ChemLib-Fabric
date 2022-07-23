@@ -5,6 +5,8 @@ import com.technovision.chemlib.api.ChemicalBlockType;
 import com.technovision.chemlib.api.MatterState;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
+import net.minecraft.client.color.block.BlockColorProvider;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -56,10 +58,7 @@ public class ChemicalBlock extends Block implements Chemical {
         return getChemical().getColor();
     }
 
-    // TODO: Fix
-    /**
-    public BlockColor getBlockColor(ItemStack pItemStack, int pTintIndex) {
+    public BlockColorProvider getBlockColor(ItemStack pItemStack, int pTintIndex) {
         return (pState, pLevel, pPos, pTintIndex1) -> getChemical().getColor();
     }
-     */
 }

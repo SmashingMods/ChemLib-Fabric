@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "com.technovision.chemlib.ChemLib"
+    ],
+    "client": [
+      "com.technovision.chemlib.ChemLibClient"
     ]
   },
   "mixins": [

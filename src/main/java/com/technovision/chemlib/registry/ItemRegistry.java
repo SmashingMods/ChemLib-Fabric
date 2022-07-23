@@ -9,6 +9,7 @@ import com.technovision.chemlib.api.MatterState;
 import com.technovision.chemlib.api.MetalType;
 import com.technovision.chemlib.common.items.CompoundItem;
 import com.technovision.chemlib.common.items.ElementItem;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -25,7 +26,6 @@ public class ItemRegistry {
 
     public static final List<ElementItem> ELEMENTS = new ArrayList<>();
     public static final List<CompoundItem> COMPOUNDS = new ArrayList<>();
-    public static final List<CompoundItem> CHEMICALS = new ArrayList<>();
 
     public static void register() throws IOException {
         // Get element JSON data
