@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "chemlib",
+  "version": "${version}",
+
+  "name": "ChemLib",
+  "description": "ChemLib provides all of the elements of the periodic table and many compounds of those elements. It also includes some items based on the elements and compounds such as ingots and lamps.",
+  "authors": [
+    "TechnoVision"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric",
+    "sources": "https://github.com/TechnoVisionDev/ChemLib"
+  },
+
+  "license": "CC BY-SA 4.0",
+  "icon": "assets/chemlib/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.technovision.chemlib.ChemLib"
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.6",
+    "fabric": "*",
+    "minecraft": "~1.19",
+    "java": ">=17"
+  },
+  "suggests": {
+  }
+}
