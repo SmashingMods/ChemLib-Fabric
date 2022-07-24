@@ -5,7 +5,7 @@ import net.minecraft.item.BucketItem;
 
 public class ChemicalBucketItem extends BucketItem {
 
-    private int color;
+    private final int color;
 
     public ChemicalBucketItem(Fluid fluid, Settings settings, int color) {
         super(fluid, settings);

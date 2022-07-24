@@ -14,6 +14,7 @@ import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
+import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
@@ -58,9 +59,6 @@ public class ChemicalFluid extends FlowableFluid {
         }
     }
 
-    /**
-     * @return whether the given fluid an instance of this fluid
-     */
     @Override
     public boolean matchesType(Fluid fluid) {
         return fluid == getStill() || fluid == getFlowing();
@@ -76,9 +74,6 @@ public class ChemicalFluid extends FlowableFluid {
         return properties.still.get();
     }
 
-    /**
-     * @return whether the fluid infinite like water
-     */
     @Override
     protected boolean isInfinite() {
         return false;
@@ -99,53 +94,34 @@ public class ChemicalFluid extends FlowableFluid {
         return properties.bucket != null ? properties.bucket.get() : Items.AIR;
     }
 
-    /**
-     * Lava returns true if its FluidState is above a certain height and the
-     * Fluid is Water.
-     *
-     * @return whether the given Fluid can flow into this FluidState
-     */
     @Override
     protected boolean canBeReplacedWith(FluidState fluidState, BlockView blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
-        return false;
+        return direction == Direction.DOWN && !fluid.isIn(FluidTags.WATER);
     }
 
-    /**
-     * Possibly related to the distance checks for flowing into nearby holes?
-     * Water returns 4. Lava returns 2 in the Overworld and 4 in the Nether.
-     */
     @Override
     protected int getFlowSpeed(WorldView worldView) {
-        return 4;
+        return properties.slopeFindDistance;
     }
 
-    /**
-     * Water returns 1. Lava returns 2 in the Overworld and 1 in the Nether.
-     */
     @Override
     protected int getLevelDecreasePerBlock(WorldView worldView) {
-        return 1;
+        return properties.levelDecreasePerBlock;
     }
 
     @Override
     public int getLevel(FluidState state) {
-        return 0;
-    }
-
-    /**
-     * Water returns 5. Lava returns 30 in the Overworld and 10 in the Nether.
-     */
-    @Override
-    public int getTickRate(WorldView worldView) {
         return 5;
     }
 
-    /**
-     * Water and Lava both return 100.0F.
-     */
+    @Override
+    public int getTickRate(WorldView worldView) {
+        return properties.tickRate;
+    }
+
     @Override
     protected float getBlastResistance() {
-        return 100.0F;
+        return properties.explosionResistance;
     }
 
     @Override
@@ -200,30 +176,21 @@ public class ChemicalFluid extends FlowableFluid {
 
     public static class Properties
     {
-        private Supplier<? extends Fluid> still;
-        private Supplier<? extends Fluid> flowing;
-        private FluidAttributes attributes;
-        private boolean canMultiply;
+        private final Supplier<? extends Fluid> still;
+        private final Supplier<? extends Fluid> flowing;
         private Supplier<? extends Item> bucket;
         private Supplier<? extends FluidBlock> block;
         private int slopeFindDistance = 4;
         private int levelDecreasePerBlock = 1;
-        private float explosionResistance = 1;
+        private float explosionResistance = 100.0F;
         private int tickRate = 5;
-        private int color;
+        private final int color;
 
         public Properties(Supplier<? extends Fluid> still, Supplier<? extends Fluid> flowing, FluidAttributes attributes)
         {
             this.still = still;
             this.flowing = flowing;
-            this.attributes = attributes;
             this.color = attributes.color;
-        }
-
-        public Properties canMultiply()
-        {
-            canMultiply = true;
-            return this;
         }
 
         public Properties bucket(Supplier<? extends Item> bucket)

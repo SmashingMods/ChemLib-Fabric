@@ -5,7 +5,7 @@ import net.minecraft.fluid.FlowableFluid;
 
 public class ChemicalFluidBlock extends FluidBlock {
 
-    private int color;
+    private final int color;
 
     public ChemicalFluidBlock(FlowableFluid fluid, Settings settings, int color) {
         super(fluid, settings);
