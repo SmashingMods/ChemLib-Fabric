@@ -19,9 +19,9 @@ public class BlockRegistry {
     public static final List<ChemicalBlock> METAL_BLOCKS = new ArrayList<>();
     public static final List<ChemicalBlock> LAMP_BLOCKS = new ArrayList<>();
 
-    public static final FabricBlockSettings METAL_PROPERTIES = FabricBlockSettings.of(Material.METAL).strength(5.0f, 12.0f).sounds(BlockSoundGroup.METAL);
+    public static final FabricBlockSettings METAL_PROPERTIES = FabricBlockSettings.of(Material.METAL).strength(5.0f, 12.0f).sounds(BlockSoundGroup.METAL).requiresTool();
 
-    public static final FabricBlockSettings LAMP_PROPERTIES = FabricBlockSettings.of(Material.GLASS).strength(2.0f, 2.0f).sounds(BlockSoundGroup.GLASS).luminance(state -> state.get(LIT) ? 15 : 0);
+    public static final FabricBlockSettings LAMP_PROPERTIES = FabricBlockSettings.of(Material.GLASS).strength(2.0f, 2.0f).sounds(BlockSoundGroup.GLASS).requiresTool().luminance(state -> state.get(LIT) ? 15 : 0);
 
     public static Optional<ChemicalBlock> getChemicalBlockByName(String name) {
         return getAllChemicalBlocks().stream().filter(blockRegistryObject -> blockRegistryObject.toString().equals(name)).findFirst();
