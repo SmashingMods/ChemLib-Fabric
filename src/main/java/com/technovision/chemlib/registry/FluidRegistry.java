@@ -3,13 +3,12 @@ package com.technovision.chemlib.registry;
 import com.technovision.chemlib.ChemLib;
 import com.technovision.chemlib.common.fluids.ChemicalFluid;
 import com.technovision.chemlib.common.fluids.ChemicalFluidBlock;
+import com.technovision.chemlib.common.fluids.ChemicalBucketItem;
 import com.technovision.chemlib.common.fluids.FluidAttributes;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.FluidBlock;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariantAttributes;
 import net.minecraft.block.Material;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.item.BucketItem;
 import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -25,9 +24,9 @@ public class FluidRegistry {
 
     public static final List<ChemicalFluid> FLUIDS = new ArrayList<>();
     public static final List<ChemicalFluidBlock> LIQUID_BLOCKS = new ArrayList<>();
-    public static final List<BucketItem> BUCKETS = new ArrayList<>();
+    public static final List<ChemicalBucketItem> BUCKETS = new ArrayList<>();
 
-    protected static void registerFluid(String pName, FluidAttributes attributes, int pSlopeFindDistance, int pDecreasePerBlock) {
+    protected static void registerFluid(String name, FluidAttributes attributes, int pSlopeFindDistance, int pDecreasePerBlock) {
 
         var ref = new Object() {
             ChemicalFluid.Properties properties = null;
@@ -40,7 +39,7 @@ public class FluidRegistry {
         fluidFlowing.updateProperties(ref.properties);
 
         ChemicalFluidBlock liquidBlock = new ChemicalFluidBlock(fluidSource, FabricBlockSettings.of(Material.WATER).noCollision().strength(100f).dropsNothing(), attributes.color);
-        BucketItem bucket = new BucketItem(fluidSource, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1));
+        ChemicalBucketItem bucket = new ChemicalBucketItem(fluidSource, new FabricItemSettings().group(ItemRegistry.MISC_TAB).recipeRemainder(Items.BUCKET).maxCount(1), attributes.color);
 
         ref.properties.slopeFindDistance(pSlopeFindDistance)
                 .levelDecreasePerBlock(pDecreasePerBlock)
@@ -54,10 +53,10 @@ public class FluidRegistry {
         LIQUID_BLOCKS.add(liquidBlock);
         BUCKETS.add(bucket);
 
-        Registry.register(Registry.FLUID, new Identifier(ChemLib.MOD_ID, String.format("%s_source", pName)), fluidSource);
-        Registry.register(Registry.FLUID, new Identifier(ChemLib.MOD_ID, String.format("%s_flowing", pName)), fluidFlowing);
-        Registry.register(Registry.BLOCK, new Identifier(ChemLib.MOD_ID, String.format("%s_liquid_block", pName)), liquidBlock);
-        Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, String.format("%s_bucket", pName)), bucket);
+        Registry.register(Registry.FLUID, new Identifier(ChemLib.MOD_ID, String.format("%s_source", name)), fluidSource);
+        Registry.register(Registry.FLUID, new Identifier(ChemLib.MOD_ID, String.format("%s_flowing", name)), fluidFlowing);
+        Registry.register(Registry.BLOCK, new Identifier(ChemLib.MOD_ID, String.format("%s_liquid_block", name)), liquidBlock);
+        Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, String.format("%s_bucket", name)), bucket);
         ItemRegistry.registerLiquidBlock(liquidBlock, new FabricItemSettings().group(ItemRegistry.MISC_TAB));
     }
 
@@ -69,7 +68,7 @@ public class FluidRegistry {
         return LIQUID_BLOCKS;
     }
 
-    public static List<BucketItem> getBuckets() {
+    public static List<ChemicalBucketItem> getBuckets() {
         return BUCKETS;
     }
 

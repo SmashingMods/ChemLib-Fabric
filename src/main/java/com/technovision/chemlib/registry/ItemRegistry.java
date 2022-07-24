@@ -82,6 +82,15 @@ public class ItemRegistry {
     public static final ItemGroup MISC_TAB = FabricItemGroupBuilder
             .create(new Identifier(ChemLib.MOD_ID, "misc"))
             .icon(() -> getChemicalBlockItemByName("radon_lamp_block").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR)))
+            .appendItems(stacks -> {
+                stacks.clear();
+                List<ItemStack> lamps = BlockRegistry.getLampBlocks().stream().map(ItemStack::new).toList();
+                List<ItemStack> buckets = FluidRegistry.getBuckets().stream().map(ItemStack::new).toList();
+                List<ItemStack> fluids = getLiquidBlockItems().stream().map(ItemStack::new).toList();
+                stacks.addAll(lamps);
+                stacks.addAll(buckets);
+                stacks.addAll(fluids);
+            })
             .build();
 
     public static void register() throws IOException {

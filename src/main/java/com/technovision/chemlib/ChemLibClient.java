@@ -24,10 +24,10 @@ public class ChemLibClient implements ClientModInitializer {
         ItemRegistry.getCompounds().forEach(compound -> ColorProviderRegistry.ITEM.register(compound::getColor, compound));
         ItemRegistry.getChemicalItems().forEach(item -> ColorProviderRegistry.ITEM.register(item::getColor, item));
         ItemRegistry.getChemicalBlockItems().forEach(item -> ColorProviderRegistry.ITEM.register(item::getColor, item));
-        //FluidRegistry.getBuckets().forEach(bucket -> ColorProviderRegistry.ITEM.register((pStack, pTintIndex) -> pTintIndex == 0 ? bucket.getFluid().getAttributes().getColor() : -1, bucket.asItem()));
 
-        // Register fluid colors
+        // Register fluid and bucketcolors
         ItemRegistry.getLiquidBlockItems().forEach(item -> ColorProviderRegistry.ITEM.register((pStack, pTintIndex) -> pTintIndex == 0 ? ((ChemicalFluidBlock) item.getBlock()).getColor() : -1, item));
+        FluidRegistry.getBuckets().forEach(bucket -> ColorProviderRegistry.ITEM.register((pStack, pTintIndex) -> pTintIndex == 0 ? bucket.getColor() : -1, bucket.asItem()));
         FluidRegistry.FLUIDS.forEach(fluid -> {
             FluidRenderHandlerRegistry.INSTANCE.register(fluid, new SimpleFluidRenderHandler(
                     SimpleFluidRenderHandler.WATER_STILL,
