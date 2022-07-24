@@ -11,10 +11,7 @@ import com.technovision.chemlib.api.MatterState;
 import com.technovision.chemlib.api.MetalType;
 import com.technovision.chemlib.common.blocks.ChemicalBlock;
 import com.technovision.chemlib.api.FluidAttributes;
-import com.technovision.chemlib.common.items.ChemicalBlockItem;
-import com.technovision.chemlib.common.items.ChemicalItem;
-import com.technovision.chemlib.common.items.CompoundItem;
-import com.technovision.chemlib.common.items.ElementItem;
+import com.technovision.chemlib.common.items.*;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.block.Block;
@@ -41,6 +38,7 @@ public class ItemRegistry {
     public static final List<ChemicalItem> METAL_DUSTS = new ArrayList<>();
     public static final List<ChemicalBlockItem> CHEMICAL_BLOCK_ITEMS = new ArrayList<>();
     public static final List<BlockItem> FLUID_BLOCK_ITEMS = new ArrayList<>();
+    public static final PeriodicTableItem PERIODIC_TABLE_ITEM = new PeriodicTableItem();
 
     public static final ItemGroup ELEMENTS_TAB = FabricItemGroupBuilder
             .create(new Identifier(ChemLib.MOD_ID, "elements"))
@@ -83,6 +81,7 @@ public class ItemRegistry {
                 List<ItemStack> lamps = BlockRegistry.getLampBlocks().stream().map(ItemStack::new).toList();
                 List<ItemStack> buckets = FluidRegistry.getBuckets().stream().map(ItemStack::new).toList();
                 List<ItemStack> fluids = getFluidBlockItems().stream().map(ItemStack::new).toList();
+                stacks.add(new ItemStack(PERIODIC_TABLE_ITEM));
                 stacks.addAll(lamps);
                 stacks.addAll(buckets);
                 stacks.addAll(fluids);
@@ -102,6 +101,7 @@ public class ItemRegistry {
         // Register items
         registerElements(elements);
         registerCompounds(compounds);
+        Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, "periodic_table"), PERIODIC_TABLE_ITEM);
     }
 
     /*

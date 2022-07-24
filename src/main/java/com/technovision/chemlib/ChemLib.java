@@ -1,6 +1,7 @@
 package com.technovision.chemlib;
 
 import com.technovision.chemlib.registry.ItemRegistry;
+import com.technovision.chemlib.registry.PaintingRegistry;
 import net.fabricmc.api.ModInitializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,6 +24,7 @@ public class ChemLib implements ModInitializer {
     public void onInitialize() {
         try {
             ItemRegistry.register();
+            PaintingRegistry.register();
         } catch (IOException e) {
             LOGGER.error("Unable to access compounds.json or elements.json");
         }
