@@ -18,14 +18,15 @@ If you are looking for the latest bleeding edge build, you can find unstable rel
 Use these builds with caution, and please do not put these in modpacks. They may contain major bugs!
 
 # Maven
-In Fabric, add the following to your `build.gradle`
+In Fabric, add the following to your `build.gradle` and replace `[VERSION]` with the version you want.<br/>
+You can view a list of all available versions by visiting [JitPack](https://jitpack.io/private#TechnoVisionDev/ChemLib)
 ```gradle
 repositories {
-    maven { url "" }
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
-    modImplementation "technovision.chemlib:ChemLib:[VERSION]"
+    modImplementation "com.github.TechnoVisionDev:ChemLib:[VERSION]"
 }
 ```
 
