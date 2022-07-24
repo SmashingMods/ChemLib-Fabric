@@ -7,12 +7,10 @@ import com.technovision.chemlib.registry.FluidRegistry;
 import com.technovision.chemlib.registry.ItemRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.model.ModelLoadingRegistry;
-import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandler;
 import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry;
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.BuiltinItemRendererRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
-import net.minecraft.block.FluidBlock;
 import net.minecraft.item.ItemStack;
 
 public class ChemLibClient implements ClientModInitializer {
@@ -25,8 +23,8 @@ public class ChemLibClient implements ClientModInitializer {
         ItemRegistry.getChemicalItems().forEach(item -> ColorProviderRegistry.ITEM.register(item::getColor, item));
         ItemRegistry.getChemicalBlockItems().forEach(item -> ColorProviderRegistry.ITEM.register(item::getColor, item));
 
-        // Register fluid and bucketcolors
-        ItemRegistry.getLiquidBlockItems().forEach(item -> ColorProviderRegistry.ITEM.register((pStack, pTintIndex) -> pTintIndex == 0 ? ((ChemicalFluidBlock) item.getBlock()).getColor() : -1, item));
+        // Register fluid and bucket colors
+        ItemRegistry.getFluidBlockItems().forEach(item -> ColorProviderRegistry.ITEM.register((pStack, pTintIndex) -> pTintIndex == 0 ? ((ChemicalFluidBlock) item.getBlock()).getColor() : -1, item));
         FluidRegistry.getBuckets().forEach(bucket -> ColorProviderRegistry.ITEM.register((pStack, pTintIndex) -> pTintIndex == 0 ? bucket.getColor() : -1, bucket.asItem()));
         FluidRegistry.FLUIDS.forEach(fluid -> {
             FluidRenderHandlerRegistry.INSTANCE.register(fluid, new SimpleFluidRenderHandler(

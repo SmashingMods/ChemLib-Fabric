@@ -10,18 +10,14 @@ import com.technovision.chemlib.api.ChemicalItemType;
 import com.technovision.chemlib.api.MatterState;
 import com.technovision.chemlib.api.MetalType;
 import com.technovision.chemlib.common.blocks.ChemicalBlock;
-import com.technovision.chemlib.common.fluids.FluidAttributes;
+import com.technovision.chemlib.api.FluidAttributes;
 import com.technovision.chemlib.common.items.ChemicalBlockItem;
 import com.technovision.chemlib.common.items.ChemicalItem;
 import com.technovision.chemlib.common.items.CompoundItem;
 import com.technovision.chemlib.common.items.ElementItem;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
-import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariantAttributes;
 import net.minecraft.block.Block;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
@@ -44,7 +40,7 @@ public class ItemRegistry {
     public static final List<ChemicalItem> PLATES = new ArrayList<>();
     public static final List<ChemicalItem> METAL_DUSTS = new ArrayList<>();
     public static final List<ChemicalBlockItem> CHEMICAL_BLOCK_ITEMS = new ArrayList<>();
-    public static final List<BlockItem> LIQUID_BLOCK_ITEMS = new ArrayList<>();
+    public static final List<BlockItem> FLUID_BLOCK_ITEMS = new ArrayList<>();
 
     public static final ItemGroup ELEMENTS_TAB = FabricItemGroupBuilder
             .create(new Identifier(ChemLib.MOD_ID, "elements"))
@@ -86,7 +82,7 @@ public class ItemRegistry {
                 stacks.clear();
                 List<ItemStack> lamps = BlockRegistry.getLampBlocks().stream().map(ItemStack::new).toList();
                 List<ItemStack> buckets = FluidRegistry.getBuckets().stream().map(ItemStack::new).toList();
-                List<ItemStack> fluids = getLiquidBlockItems().stream().map(ItemStack::new).toList();
+                List<ItemStack> fluids = getFluidBlockItems().stream().map(ItemStack::new).toList();
                 stacks.addAll(lamps);
                 stacks.addAll(buckets);
                 stacks.addAll(fluids);
@@ -118,7 +114,7 @@ public class ItemRegistry {
         items.addAll(getCompounds());
         items.addAll(getChemicalItems());
         items.addAll(getChemicalBlockItems());
-        items.addAll(getLiquidBlockItems());
+        items.addAll(getFluidBlockItems());
         return items;
     }
 
@@ -142,8 +138,8 @@ public class ItemRegistry {
         return CHEMICAL_BLOCK_ITEMS;
     }
 
-    public static List<BlockItem> getLiquidBlockItems() {
-        return LIQUID_BLOCK_ITEMS;
+    public static List<BlockItem> getFluidBlockItems() {
+        return FLUID_BLOCK_ITEMS;
     }
 
     public static List<ChemicalItem> getChemicalItemsByType(ChemicalItemType chemicalItemType) {
@@ -358,6 +354,6 @@ public class ItemRegistry {
     public static void registerLiquidBlock(Block block, FabricItemSettings settings) {
         BlockItem blockItem = new BlockItem(block, settings);
         Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, Registry.BLOCK.getId(block).getPath()), blockItem);
-        LIQUID_BLOCK_ITEMS.add(blockItem);
+        FLUID_BLOCK_ITEMS.add(blockItem);
     }
 }

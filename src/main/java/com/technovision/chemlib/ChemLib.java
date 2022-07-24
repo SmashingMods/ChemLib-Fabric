@@ -21,9 +21,6 @@ public class ChemLib implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        //BlockRegistry.register();
-        //FluidRegistry.register();
-        //PaintingsRegistry.register();
         try {
             ItemRegistry.register();
         } catch (IOException e) {
