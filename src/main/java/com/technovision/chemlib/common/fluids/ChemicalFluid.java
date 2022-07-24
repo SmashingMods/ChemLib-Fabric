@@ -35,6 +35,10 @@ public class ChemicalFluid extends FlowableFluid {
         this.properties = properties;
     }
 
+    public int getColor() {
+        return properties.color;
+    }
+
     @Override
     protected void randomDisplayTick(World world, BlockPos pos, FluidState state, Random random) {
         if (!state.isStill() && !(Boolean)state.get(FALLING)) {
@@ -51,7 +55,6 @@ public class ChemicalFluid extends FlowableFluid {
                     (double)pos.getZ() + random.nextDouble(),
                     0.0D, 0.0D, 0.0D);
         }
-
     }
 
     /**
@@ -206,12 +209,14 @@ public class ChemicalFluid extends FlowableFluid {
         private int levelDecreasePerBlock = 1;
         private float explosionResistance = 1;
         private int tickRate = 5;
+        private int color;
 
         public Properties(Supplier<? extends Fluid> still, Supplier<? extends Fluid> flowing, FluidAttributes attributes)
         {
             this.still = still;
             this.flowing = flowing;
             this.attributes = attributes;
+            this.color = attributes.color;
         }
 
         public Properties canMultiply()

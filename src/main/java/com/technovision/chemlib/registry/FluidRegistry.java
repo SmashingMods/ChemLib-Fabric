@@ -2,6 +2,7 @@ package com.technovision.chemlib.registry;
 
 import com.technovision.chemlib.ChemLib;
 import com.technovision.chemlib.common.fluids.ChemicalFluid;
+import com.technovision.chemlib.common.fluids.ChemicalFluidBlock;
 import com.technovision.chemlib.common.fluids.FluidAttributes;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -22,8 +23,8 @@ public class FluidRegistry {
     public static final Identifier FLOWING = new Identifier("block/water_flow");
     public static final Identifier OVERLAY = new Identifier("block/water_overlay");
 
-    public static final List<FlowableFluid> FLUIDS = new ArrayList<>();
-    public static final List<FluidBlock> LIQUID_BLOCKS = new ArrayList<>();
+    public static final List<ChemicalFluid> FLUIDS = new ArrayList<>();
+    public static final List<ChemicalFluidBlock> LIQUID_BLOCKS = new ArrayList<>();
     public static final List<BucketItem> BUCKETS = new ArrayList<>();
 
     protected static void registerFluid(String pName, FluidAttributes attributes, int pSlopeFindDistance, int pDecreasePerBlock) {
@@ -38,7 +39,7 @@ public class FluidRegistry {
         fluidSource.updateProperties(ref.properties);
         fluidFlowing.updateProperties(ref.properties);
 
-        FluidBlock liquidBlock = new FluidBlock(fluidSource, FabricBlockSettings.of(Material.WATER).noCollision().strength(100f).dropsNothing());
+        ChemicalFluidBlock liquidBlock = new ChemicalFluidBlock(fluidSource, FabricBlockSettings.of(Material.WATER).noCollision().strength(100f).dropsNothing(), attributes.color);
         BucketItem bucket = new BucketItem(fluidSource, new FabricItemSettings().recipeRemainder(Items.BUCKET).maxCount(1));
 
         ref.properties.slopeFindDistance(pSlopeFindDistance)
@@ -60,7 +61,11 @@ public class FluidRegistry {
         ItemRegistry.registerLiquidBlock(liquidBlock, new FabricItemSettings().group(ItemRegistry.MISC_TAB));
     }
 
-    public static List<FluidBlock> getLiquidBlocks() {
+    public static List<ChemicalFluid> getFluids() {
+        return FLUIDS;
+    }
+
+    public static List<ChemicalFluidBlock> getFluidBlocks() {
         return LIQUID_BLOCKS;
     }
 
