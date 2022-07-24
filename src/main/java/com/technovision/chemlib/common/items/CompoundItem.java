@@ -94,9 +94,8 @@ public class CompoundItem extends Item implements Chemical {
         StringBuilder builder = new StringBuilder();
 
         for (String name : components.keySet()) {
-            // TODO: Fix
-            //ItemRegistry.getElementByName(name).ifPresent(elementItem -> builder.append(elementItem.getAbbreviation()));
-            //ItemRegistry.getCompoundByName(name).ifPresent(compoundItem -> builder.append(String.format("(%s)", compoundItem.getAbbreviation())));
+            ItemRegistry.getElementByName(name).ifPresent(elementItem -> builder.append(elementItem.getAbbreviation()));
+            ItemRegistry.getCompoundByName(name).ifPresent(compoundItem -> builder.append(String.format("(%s)", compoundItem.getAbbreviation())));
 
             Integer count = components.get(name);
             if (count > 1) {
