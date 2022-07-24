@@ -2,6 +2,7 @@ package com.technovision.chemlib.common.items;
 
 import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import com.technovision.chemlib.api.Chemical;
+import com.technovision.chemlib.api.ChemicalBlockType;
 import com.technovision.chemlib.api.Element;
 import com.technovision.chemlib.api.MatterState;
 import com.technovision.chemlib.common.blocks.ChemicalBlock;
@@ -23,10 +24,12 @@ import java.util.List;
 public class ChemicalBlockItem extends BlockItem implements Chemical {
 
     private final ChemicalBlock block;
+    private final ChemicalBlockType type;
 
     public ChemicalBlockItem(ChemicalBlock block, FabricItemSettings settings) {
         super(block, settings);
         this.block = block;
+        this.type = block.getBlockType();
     }
 
     @Override
@@ -69,5 +72,9 @@ public class ChemicalBlockItem extends BlockItem implements Chemical {
 
     public int getColor(ItemStack pItemStack, int pTintIndex) {
         return getColor();
+    }
+
+    public ChemicalBlockType getType() {
+        return type;
     }
 }
