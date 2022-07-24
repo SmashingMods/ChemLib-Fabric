@@ -25,6 +25,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ItemRegistry {
@@ -39,23 +40,43 @@ public class ItemRegistry {
     public static final List<ChemicalBlockItem> CHEMICAL_BLOCK_ITEMS = new ArrayList<>();
     public static final List<BlockItem> LIQUID_BLOCK_ITEMS = new ArrayList<>();
 
-    public static final ItemGroup ELEMENTS_TAB = FabricItemGroupBuilder.build(
-            new Identifier(ChemLib.MOD_ID, "elements"),
-            () -> getElementByName("hydrogen").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR))
-    );
+    public static final ItemGroup ELEMENTS_TAB = FabricItemGroupBuilder
+            .create(new Identifier(ChemLib.MOD_ID, "elements"))
+            .icon(() -> getElementByName("hydrogen").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR)))
+            .build();
 
-    public static final ItemGroup COMPOUNDS_TAB = FabricItemGroupBuilder.build(
-            new Identifier(ChemLib.MOD_ID, "compounds"),
-            () -> getElementByName("cellulose").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR))
-    );
-    public static final ItemGroup METALS_TAB = FabricItemGroupBuilder.build(
-            new Identifier(ChemLib.MOD_ID, "metals"),
-            () -> getChemicalItemByNameAndType("barium", ChemicalItemType.INGOT).map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR))
-    );
-    public static final ItemGroup MISC_TAB = FabricItemGroupBuilder.build(
-            new Identifier(ChemLib.MOD_ID, "misc"),
-            () -> getChemicalBlockItemByName("radon_lamp_block").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR))
-    );
+    public static final ItemGroup COMPOUNDS_TAB = FabricItemGroupBuilder
+            .create(new Identifier(ChemLib.MOD_ID, "compounds"))
+            .icon(() -> getCompoundByName("cellulose").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR)))
+            .appendItems(stacks -> {
+                stacks.clear();
+                List<ItemStack> compounds = getCompounds().stream().map(ItemStack::new).toList();
+                List<ItemStack> compoundDusts = getChemicalItemsByType(ChemicalItemType.COMPOUND).stream().map(ItemStack::new).toList();
+                stacks.addAll(compounds);
+                stacks.addAll(compoundDusts);
+            }).build();
+
+    public static final ItemGroup METALS_TAB = FabricItemGroupBuilder
+            .create(new Identifier(ChemLib.MOD_ID, "metals"))
+            .icon(() -> getChemicalItemByNameAndType("barium", ChemicalItemType.INGOT).map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR)))
+            .appendItems(stacks -> {
+                stacks.clear();
+                List<ItemStack> dustStacks = getChemicalItemsByType(ChemicalItemType.DUST).stream().map(ItemStack::new).toList();
+                List<ItemStack> nuggetStacks = getChemicalItemsByType(ChemicalItemType.NUGGET).stream().map(ItemStack::new).toList();
+                List<ItemStack> ingotStacks = getChemicalItemsByType(ChemicalItemType.INGOT).stream().map(ItemStack::new).toList();
+                List<ItemStack> plateStacks = getChemicalItemsByType(ChemicalItemType.PLATE).stream().map(ItemStack::new).toList();
+                List<ItemStack> blockItemStacks = getChemicalBlockItems().stream().filter(item -> ((ChemicalBlock) item.getBlock()).getBlockType().asString().equals("metal")).map(ItemStack::new).toList();
+                stacks.addAll(ingotStacks);
+                stacks.addAll(blockItemStacks);
+                stacks.addAll(nuggetStacks);
+                stacks.addAll(dustStacks);
+                stacks.addAll(plateStacks);
+            }).build();
+
+    public static final ItemGroup MISC_TAB = FabricItemGroupBuilder
+            .create(new Identifier(ChemLib.MOD_ID, "misc"))
+            .icon(() -> getChemicalBlockItemByName("radon_lamp_block").map(ItemStack::new).orElseGet(() -> new ItemStack(Items.AIR)))
+            .build();
 
     public static void register() throws IOException {
         // Get element JSON data
