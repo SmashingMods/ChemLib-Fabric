@@ -10,13 +10,20 @@ import com.technovision.chemlib.api.ChemicalItemType;
 import com.technovision.chemlib.api.MatterState;
 import com.technovision.chemlib.api.MetalType;
 import com.technovision.chemlib.common.blocks.ChemicalBlock;
+import com.technovision.chemlib.common.fluids.FluidAttributes;
 import com.technovision.chemlib.common.items.ChemicalBlockItem;
 import com.technovision.chemlib.common.items.ChemicalItem;
 import com.technovision.chemlib.common.items.CompoundItem;
 import com.technovision.chemlib.common.items.ElementItem;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariant;
+import net.fabricmc.fabric.api.transfer.v1.fluid.FluidVariantAttributes;
+import net.minecraft.block.Block;
+import net.minecraft.fluid.Fluid;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.*;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -234,26 +241,24 @@ public class ItemRegistry {
                             int slopeFindDistance = fluidAttributes.has("slope_find_distance") ? fluidAttributes.get("slope_find_distance").getAsInt() : 5;
                             int decreasePerBlock = fluidAttributes.has("decrease_per_block") ? fluidAttributes.get("decrease_per_block").getAsInt() : 2;
 
-                            /**
-                            FluidAttributes.Builder attributes = FluidAttributes.builder(FluidRegistry.STILL, FluidRegistry.FLOWING)
+                            FluidAttributes attributes = new FluidAttributes(FluidRegistry.STILL, FluidRegistry.FLOWING)
                                     .density(density)
                                     .luminosity(luminosity)
                                     .viscosity(viscosity)
-                                    .sound(SoundEvents.BUCKET_FILL)
+                                    .sound(SoundEvents.ITEM_BUCKET_FILL)
                                     .overlay(FluidRegistry.OVERLAY)
                                     .color((int) Long.parseLong(color, 16));
-                             */
 
                             switch (matterState) {
                                 case LIQUID -> {
-                                    //FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
+                                    FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
                                 }
                                 case GAS -> {
                                     if (group == 18) {
                                         registerChemicalBlock(elementIdentifier, ChemicalBlockType.LAMP);
                                     }
-                                    //attributes.gaseous();
-                                    //FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
+                                    attributes.gaseous();
+                                    FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
                                 }
                             }
                         }
@@ -302,12 +307,11 @@ public class ItemRegistry {
                         int slopeFindDistance = fluidAttributes.has("slope_find_distance") ? fluidAttributes.get("slope_find_distance").getAsInt() : 5;
                         int decreasePerBlock = fluidAttributes.has("decrease_per_block") ? fluidAttributes.get("decrease_per_block").getAsInt() : 2;
 
-                        /**
-                        FluidAttributes.Builder attributes = FluidAttributes.builder(FluidRegistry.STILL, FluidRegistry.FLOWING)
+                        FluidAttributes attributes = new FluidAttributes(FluidRegistry.STILL, FluidRegistry.FLOWING)
                                 .density(density)
                                 .luminosity(luminosity)
                                 .viscosity(viscosity)
-                                .sound(SoundEvents.BUCKET_FILL)
+                                .sound(SoundEvents.ITEM_BUCKET_FILL)
                                 .overlay(FluidRegistry.OVERLAY)
                                 .color((int) Long.parseLong(color, 16));
 
@@ -318,7 +322,6 @@ public class ItemRegistry {
                                 FluidRegistry.registerFluid(compoundName, attributes, slopeFindDistance, decreasePerBlock);
                             }
                         }
-                         */
                     }
                 }
             }
@@ -337,10 +340,15 @@ public class ItemRegistry {
             identifier = new Identifier(ChemLib.MOD_ID, String.format(path, chemical.getPath()));
             settings.group(MISC_TAB);
         }
-
         ChemicalBlock chemicalBlock = BlockRegistry.registerBlock(chemical, identifier, type);
         ChemicalBlockItem chemicalBlockItem = new ChemicalBlockItem(chemicalBlock, settings);
         Registry.register(Registry.ITEM, identifier, chemicalBlockItem);
         CHEMICAL_BLOCK_ITEMS.add(chemicalBlockItem);
+    }
+
+    public static void registerLiquidBlock(Block block, FabricItemSettings settings) {
+        BlockItem blockItem = new BlockItem(block, settings);
+        Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, Registry.BLOCK.getId(block).getPath()), blockItem);
+        LIQUID_BLOCK_ITEMS.add(blockItem);
     }
 }
