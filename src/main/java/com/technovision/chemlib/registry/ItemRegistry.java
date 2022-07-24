@@ -25,7 +25,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class ItemRegistry {
@@ -243,21 +242,20 @@ public class ItemRegistry {
                                     .sound(SoundEvents.BUCKET_FILL)
                                     .overlay(FluidRegistry.OVERLAY)
                                     .color((int) Long.parseLong(color, 16));
+                             */
 
                             switch (matterState) {
                                 case LIQUID -> {
-                                    FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
+                                    //FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
                                 }
                                 case GAS -> {
                                     if (group == 18) {
-                                        BlockRegistry.BLOCKS.register(String.format("%s_lamp_block", elementName), () -> new LampBlock(new ResourceLocation(ChemLib.MODID, elementName), ChemicalBlockType.LAMP, BlockRegistry.LAMP_BLOCKS, BlockRegistry.LAMP_PROPERTIES));
-                                        ItemRegistry.fromChemicalBlock(BlockRegistry.getRegistryObjectByName(String.format("%s_lamp_block", elementName)).get(), new Item.Properties().tab(ItemRegistry.MISC_TAB));
+                                        registerChemicalBlock(elementIdentifier, ChemicalBlockType.LAMP);
                                     }
-                                    attributes.gaseous();
-                                    FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
+                                    //attributes.gaseous();
+                                    //FluidRegistry.registerFluid(elementName, attributes, slopeFindDistance, decreasePerBlock);
                                 }
                             }
-                             */
                         }
                     }
                 }
@@ -328,10 +326,17 @@ public class ItemRegistry {
     }
 
     private static void registerChemicalBlock(Identifier chemical, ChemicalBlockType type) {
-        Identifier identifier = new Identifier(ChemLib.MOD_ID, String.format("%s_metal_block", chemical.getPath()));
+        Identifier identifier;
         FabricItemSettings settings = new FabricItemSettings();
-        if (type == ChemicalBlockType.METAL) settings.group(METALS_TAB);
-        else settings.group(MISC_TAB);
+        if (type == ChemicalBlockType.METAL) {
+            String path = "%s_metal_block";
+            identifier = new Identifier(ChemLib.MOD_ID, String.format(path, chemical.getPath()));
+            settings.group(METALS_TAB);
+        } else {
+            String path = "%s_lamp_block";
+            identifier = new Identifier(ChemLib.MOD_ID, String.format(path, chemical.getPath()));
+            settings.group(MISC_TAB);
+        }
 
         ChemicalBlock chemicalBlock = BlockRegistry.registerBlock(chemical, identifier, type);
         ChemicalBlockItem chemicalBlockItem = new ChemicalBlockItem(chemicalBlock, settings);

@@ -3,7 +3,6 @@ package com.technovision.chemlib.common.blocks;
 import com.technovision.chemlib.api.Chemical;
 import com.technovision.chemlib.api.ChemicalBlockType;
 import com.technovision.chemlib.api.MatterState;
-import com.technovision.chemlib.registry.ItemRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.client.color.block.BlockColorProvider;

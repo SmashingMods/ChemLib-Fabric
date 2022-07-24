@@ -2,6 +2,7 @@ package com.technovision.chemlib.registry;
 
 import com.technovision.chemlib.api.ChemicalBlockType;
 import com.technovision.chemlib.common.blocks.ChemicalBlock;
+import com.technovision.chemlib.common.blocks.LampBlock;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
@@ -54,16 +55,17 @@ public class BlockRegistry {
     }
 
     public static ChemicalBlock registerBlock(Identifier chemicalIdentifier, Identifier blockIdentifier, ChemicalBlockType type) {
+        ChemicalBlock chemicalBlock;
         FabricBlockSettings settings;
         if (type == ChemicalBlockType.METAL) {
             settings = METAL_PROPERTIES;
+            chemicalBlock = new ChemicalBlock(chemicalIdentifier, type, settings);
         } else {
             settings = LAMP_PROPERTIES;
+            chemicalBlock = new LampBlock(chemicalIdentifier, type, settings);
         }
 
-        ChemicalBlock chemicalBlock = new ChemicalBlock(chemicalIdentifier, type, settings);
         Registry.register(Registry.BLOCK, blockIdentifier, chemicalBlock);
-
         BLOCKS.put(blockIdentifier.getPath(), chemicalBlock);
         if (type == ChemicalBlockType.METAL) {
             METAL_BLOCKS.add(chemicalBlock);
