@@ -30,6 +30,6 @@ public class ChemLibClient implements ClientModInitializer {
             identifierConsumer.accept(ElementRenderer.LIQUID_MODEL_LOCATION);
             identifierConsumer.accept(ElementRenderer.GAS_MODEL_LOCATION);
         });
-        ItemRegistry.ELEMENTS.forEach(element -> BuiltinItemRendererRegistry.INSTANCE.register(element, new ElementRenderer()));
+        ItemRegistry.getElements().forEach(element -> BuiltinItemRendererRegistry.INSTANCE.register(element, new ElementRenderer()));
     }
 }
