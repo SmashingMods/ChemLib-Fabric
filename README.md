@@ -1,4 +1,4 @@
-![lol](https://i.imgur.com/u00iyGc.png)
+![lol](https://i.imgur.com/nRaok6G.png)
 
 [![](https://cf.way2muchnoise.eu/full_chemlib-fabric_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://cf.way2muchnoise.eu/packs/chemlib-fabric.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://cf.way2muchnoise.eu/versions/chemlib-fabric.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://jitpack.io/v/TechnoVisionDev/ChemLib.svg)](https://jitpack.io/#TechnoVisionDev/ChemLib) [![](https://img.shields.io/badge/Discord-TechnoVision-738bd7.svg)](https://discord.gg/m5fjByfrKP) 
 
