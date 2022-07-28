@@ -14,12 +14,12 @@ The top file in the list is the latest recommended release!
 
 ### Development Builds
 
-If you are looking for the latest bleeding edge build, you can find unstable releases [here](https://github.com/TechnoVisionDev/ChemLib/releases).</br>
+If you are looking for the latest bleeding edge build, you can find unstable releases [here](https://github.com/SmashingMods/ChemLib-Fabric/releases).</br>
 Use these builds with caution, and please do not put these in modpacks. They may contain major bugs!
 
 # Maven
 In Fabric, add the following to your `build.gradle` and replace `[VERSION]` with the version you want.<br/>
-You can view a list of all available versions by visiting [JitPack](https://jitpack.io/private#TechnoVisionDev/ChemLib)
+You can view a list of all available versions by visiting [JitPack](https://jitpack.io/#SmashingMods/ChemLib-Fabric)
 ```gradle
 repositories {
     maven { url 'https://jitpack.io' }
@@ -37,8 +37,8 @@ dependencies {
 
 * TechnoVision - Developer of the Fabric version
 * DarkArcana - Developer of the Forge version
-* Timbroglio - Artist
+* Timbroglio - Model and Texture Artist
 
 # License
 
-ChemLib is All Rights Reserved unless explicity stated.
+ChemLib is All Rights Reserved unless explicitly stated.
