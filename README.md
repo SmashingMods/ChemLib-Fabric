@@ -1,6 +1,6 @@
 ![lol](https://i.imgur.com/nRaok6G.png)
 
-[![](https://cf.way2muchnoise.eu/full_chemlib-fabric_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://cf.way2muchnoise.eu/packs/chemlib-fabric.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://cf.way2muchnoise.eu/versions/chemlib-fabric.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://jitpack.io/v/TechnoVisionDev/ChemLib.svg)](https://jitpack.io/#TechnoVisionDev/ChemLib) [![](https://img.shields.io/badge/Discord-TechnoVision-738bd7.svg)](https://discord.gg/m5fjByfrKP) 
+[![](https://cf.way2muchnoise.eu/full_chemlib-fabric_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://cf.way2muchnoise.eu/packs/chemlib-fabric.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://cf.way2muchnoise.eu/versions/chemlib-fabric.svg)](https://www.curseforge.com/minecraft/mc-mods/chemlib-fabric) [![](https://jitpack.io/v/TechnoVisionDev/ChemLib.svg)](https://jitpack.io/#TechnoVisionDev/ChemLib)
 
 # ChemLib - Fabric Library
 _This is a Fabric port of the original ChemLib Forge library by Dark_Arcana. It adds over 950+ items to Minecraft, including every known chemical element, compound, metal, liquid, and gas that exists in the real world. The purpose of this library is to provide a shared source of items, blocks, and fluids for chemistry and tech mods. It was originally developed for the Alchemistry mod but can be used by any mod!_
@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-    modImplementation "com.github.TechnoVisionDev:ChemLib:[VERSION]"
+    modImplementation "com.github.SmashingMods:ChemLib-Fabric:[VERSION]"
 }
 ```
 
@@ -36,7 +36,8 @@ dependencies {
 # Credits
 
 * TechnoVision - Developer of the Fabric version
-* Dark_Arcana - Developer of the Forge version
+* DarkArcana - Developer of the Forge version
+* Timbroglio - Artist
 
 # License
 

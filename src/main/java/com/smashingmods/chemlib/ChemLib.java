@@ -13,7 +13,7 @@ import java.io.IOException;
  * and compounds as items in Minecraft.
  *
  * @version 1.0.0
- * @author TecnoVisions
+ * @author TechnoVisions
  */
 public class ChemLib implements ModInitializer {
 

@@ -14,6 +14,11 @@ import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemStack;
 
+/**
+ * Client side mod initializer for registering dynamic renderers.
+ *
+ * @author TechnoVision
+ */
 public class ChemLibClient implements ClientModInitializer {
 
     @Override
