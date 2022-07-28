@@ -37,7 +37,6 @@ public class ItemRegistry {
     public static final List<ChemicalItem> PLATES = new ArrayList<>();
     public static final List<ChemicalItem> METAL_DUSTS = new ArrayList<>();
     public static final List<ChemicalBlockItem> CHEMICAL_BLOCK_ITEMS = new ArrayList<>();
-    public static final List<BlockItem> FLUID_BLOCK_ITEMS = new ArrayList<>();
     public static final PeriodicTableItem PERIODIC_TABLE_ITEM = new PeriodicTableItem();
 
     public static final ItemGroup ELEMENTS_TAB = FabricItemGroupBuilder
@@ -80,11 +79,9 @@ public class ItemRegistry {
                 stacks.clear();
                 List<ItemStack> lamps = BlockRegistry.getLampBlocks().stream().map(ItemStack::new).toList();
                 List<ItemStack> buckets = FluidRegistry.getBuckets().stream().map(ItemStack::new).toList();
-                List<ItemStack> fluids = getFluidBlockItems().stream().map(ItemStack::new).toList();
                 stacks.add(new ItemStack(PERIODIC_TABLE_ITEM));
                 stacks.addAll(lamps);
                 stacks.addAll(buckets);
-                stacks.addAll(fluids);
             })
             .build();
 
@@ -125,7 +122,6 @@ public class ItemRegistry {
         items.addAll(getCompounds());
         items.addAll(getChemicalItems());
         items.addAll(getChemicalBlockItems());
-        items.addAll(getFluidBlockItems());
         return items;
     }
 
@@ -147,10 +143,6 @@ public class ItemRegistry {
 
     public static List<ChemicalBlockItem> getChemicalBlockItems() {
         return CHEMICAL_BLOCK_ITEMS;
-    }
-
-    public static List<BlockItem> getFluidBlockItems() {
-        return FLUID_BLOCK_ITEMS;
     }
 
     public static List<ChemicalItem> getChemicalItemsByType(ChemicalItemType chemicalItemType) {
@@ -353,11 +345,5 @@ public class ItemRegistry {
         }
         ChemicalBlock chemicalBlock = BlockRegistry.registerBlock(chemical, identifier, type);
         CHEMICAL_BLOCK_ITEMS.add(new ChemicalBlockItem(chemicalBlock, settings));
-    }
-
-    public static void registerLiquidBlock(Block block, FabricItemSettings settings) {
-        BlockItem blockItem = new BlockItem(block, settings);
-        Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, Registry.BLOCK.getId(block).getPath()), blockItem);
-        FLUID_BLOCK_ITEMS.add(blockItem);
     }
 }

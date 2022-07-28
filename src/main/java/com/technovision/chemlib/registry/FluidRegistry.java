@@ -56,7 +56,6 @@ public class FluidRegistry {
         Registry.register(Registry.FLUID, new Identifier(ChemLib.MOD_ID, String.format("%s_flowing", name)), fluidFlowing);
         Registry.register(Registry.BLOCK, new Identifier(ChemLib.MOD_ID, String.format("%s_liquid_block", name)), liquidBlock);
         Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, String.format("%s_bucket", name)), bucket);
-        ItemRegistry.registerLiquidBlock(liquidBlock, new FabricItemSettings().group(ItemRegistry.MISC_TAB));
     }
 
     public static List<ChemicalFluid> getFluids() {
