@@ -40,4 +40,4 @@ dependencies {
 
 # License
 
-ChemLib is licensed under the MIT license. Full license is in **LICENSE.md**.
+ChemLib is All Rights Reserved unless explicity stated.
