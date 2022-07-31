@@ -3085,7 +3085,7 @@
       "name": "calcium_sulfide",
       "matter_state": "solid",
       "has_item": true,
-      "description": "",
+      "description": "This chemical's uses are unknown at this time.",
       "color": "1f1f1f",
       "components": [
         {
