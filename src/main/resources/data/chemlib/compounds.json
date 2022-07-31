@@ -3059,6 +3059,44 @@
           "name": "sulfur"
         }
       ]
+    },
+    {
+      "name": "keratin",
+      "matter_state": "solid",
+      "has_item": false,
+      "description": "A fibrous protein, this compound makes up hair, nails, feathers, horns, scales, claws, hooves, and skin.",
+      "color": "30160d",
+      "components": [
+        {
+          "name": "protein",
+          "count": 2
+        },
+        {
+          "name": "starch",
+          "count": 2
+        },
+        {
+          "name": "sulfur_dioxide",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "name": "calcium_sulfide",
+      "matter_state": "solid",
+      "has_item": true,
+      "description": "",
+      "color": "1f1f1f",
+      "components": [
+        {
+          "name": "calcium",
+          "count": 1
+        },
+        {
+          "name": "sulfur",
+          "count": 1
+        }
+      ]
     }
   ]
 }

@@ -222,17 +222,16 @@ public class ItemRegistry {
                 switch (matterState) {
                     case SOLID -> {
                         boolean hasItem = object.has("has_item") && object.get("has_item").getAsBoolean();
-                        if (!hasItem) {
-                            if (metalType == MetalType.METAL) {
-                                // Register metal items & blocks
+                        if (metalType == MetalType.METAL) {
+                            // Register metal items & blocks
+                            createItemByType(element, elementIdentifier, ChemicalItemType.PLATE, METALS_TAB);
+                            if (!hasItem) {
                                 createItemByType(element, elementIdentifier, ChemicalItemType.NUGGET, METALS_TAB);
                                 createItemByType(element, elementIdentifier, ChemicalItemType.INGOT, METALS_TAB);
-                                createItemByType(element, elementIdentifier, ChemicalItemType.PLATE, METALS_TAB);
                                 createChemicalBlock(elementIdentifier, ChemicalBlockType.METAL);
                             }
-                            // Register metal dust
-                            createItemByType(element, elementIdentifier, ChemicalItemType.DUST, METALS_TAB);
                         }
+                        createItemByType(element, elementIdentifier, ChemicalItemType.DUST, METALS_TAB);
                     }
                     case LIQUID, GAS -> {
                         boolean hasFluid = object.has("has_fluid") && object.get("has_fluid").getAsBoolean();
