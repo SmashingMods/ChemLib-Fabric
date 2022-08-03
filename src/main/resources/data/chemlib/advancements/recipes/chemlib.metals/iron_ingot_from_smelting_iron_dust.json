@@ -6,7 +6,7 @@
     ]
   },
   "criteria": {
-    "has_actinium": {
+    "has_iron": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
