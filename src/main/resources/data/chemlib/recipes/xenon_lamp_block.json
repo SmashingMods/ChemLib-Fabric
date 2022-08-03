@@ -7,7 +7,7 @@
   ],
   "key": {
     "G": {
-      "tag": "c:glass"
+      "tag": "forge:glass"
     },
     "E": {
       "item": "chemlib:xenon"
