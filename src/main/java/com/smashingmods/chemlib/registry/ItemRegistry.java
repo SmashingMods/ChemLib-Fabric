@@ -229,6 +229,8 @@ public class ItemRegistry {
                                 createItemByType(element, elementIdentifier, ChemicalItemType.NUGGET, METALS_TAB);
                                 createItemByType(element, elementIdentifier, ChemicalItemType.INGOT, METALS_TAB);
                                 createChemicalBlock(elementIdentifier, ChemicalBlockType.METAL);
+                            } else if (elementName.equals("copper")) {
+                                createItemByType(element, elementIdentifier, ChemicalItemType.NUGGET, METALS_TAB);
                             }
                         }
                         createItemByType(element, elementIdentifier, ChemicalItemType.DUST, METALS_TAB);
