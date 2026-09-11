@@ -1,7 +1,7 @@
 package com.smashingmods.chemlib.api;
 
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.Identifier;
 
 /**
  * Stores attributes for a custom fluid type

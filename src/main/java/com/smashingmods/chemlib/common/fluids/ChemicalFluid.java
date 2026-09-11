@@ -1,31 +1,31 @@
 package com.smashingmods.chemlib.common.fluids;
 
 import com.smashingmods.chemlib.api.FluidAttributes;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.FluidBlock;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.fluid.FlowableFluid;
-import net.minecraft.fluid.Fluid;
-import net.minecraft.fluid.FluidState;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.state.StateManager;
-import net.minecraft.tag.FluidTags;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import net.minecraft.world.WorldAccess;
-import net.minecraft.world.WorldView;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.material.FlowingFluid;
+import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.LevelReader;
 
 import java.util.function.Supplier;
 
-public class ChemicalFluid extends FlowableFluid {
+public class ChemicalFluid extends FlowingFluid {
 
     private Properties properties;
 
@@ -42,12 +42,12 @@ public class ChemicalFluid extends FlowableFluid {
     }
 
     @Override
-    protected void randomDisplayTick(World world, BlockPos pos, FluidState state, Random random) {
-        if (!state.isStill() && !(Boolean)state.get(FALLING)) {
+    public void animateTick(Level world, BlockPos pos, FluidState state, RandomSource random) {
+        if (!state.isSource() && !(Boolean)state.getValue(FALLING)) {
             if (random.nextInt(64) == 0) {
-                world.playSound((double)pos.getX() + 0.5D,
+                world.playLocalSound((double)pos.getX() + 0.5D,
                         (double)pos.getY() + 0.5D, (double)pos.getZ() + 0.5D,
-                        SoundEvents.BLOCK_WATER_AMBIENT, SoundCategory.BLOCKS,
+                        SoundEvents.WATER_AMBIENT, SoundSource.BLOCKS,
                         random.nextFloat() * 0.25F + 0.75F, random.nextFloat() + 0.5F,
                         false);
             }
@@ -60,8 +60,8 @@ public class ChemicalFluid extends FlowableFluid {
     }
 
     @Override
-    public boolean matchesType(Fluid fluid) {
-        return fluid == getStill() || fluid == getFlowing();
+    public boolean isSame(Fluid fluid) {
+        return fluid == getSource() || fluid == getFlowing();
     }
 
     @Override
@@ -70,12 +70,12 @@ public class ChemicalFluid extends FlowableFluid {
     }
 
     @Override
-    public Fluid getStill() {
+    public Fluid getSource() {
         return properties.still.get();
     }
 
     @Override
-    protected boolean isInfinite() {
+    protected boolean canConvertToSource(net.minecraft.server.level.ServerLevel level) {
         return false;
     }
 
@@ -84,53 +84,53 @@ public class ChemicalFluid extends FlowableFluid {
      * the block's loot table. Lava plays the "block.lava.extinguish" sound.
      */
     @Override
-    protected void beforeBreakingBlock(WorldAccess world, BlockPos pos, BlockState state) {
+    protected void beforeDestroyingBlock(LevelAccessor world, BlockPos pos, BlockState state) {
         final BlockEntity blockEntity = state.hasBlockEntity() ? world.getBlockEntity(pos) : null;
-        Block.dropStacks(state, world, pos, blockEntity);
+        Block.dropResources(state, world, pos, blockEntity);
     }
 
     @Override
-    public Item getBucketItem() {
+    public Item getBucket() {
         return properties.bucket != null ? properties.bucket.get() : Items.AIR;
     }
 
     @Override
-    protected boolean canBeReplacedWith(FluidState fluidState, BlockView blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
-        return direction == Direction.DOWN && !fluid.isIn(FluidTags.WATER);
+    public boolean canBeReplacedWith(FluidState fluidState, BlockGetter blockView, BlockPos blockPos, Fluid fluid, Direction direction) {
+        return direction == Direction.DOWN && !fluid.is(FluidTags.WATER);
     }
 
     @Override
-    protected int getFlowSpeed(WorldView worldView) {
+    public int getSlopeFindDistance(LevelReader worldView) {
         return properties.slopeFindDistance;
     }
 
     @Override
-    protected int getLevelDecreasePerBlock(WorldView worldView) {
+    public int getDropOff(LevelReader worldView) {
         return properties.levelDecreasePerBlock;
     }
 
     @Override
-    public int getLevel(FluidState state) {
+    public int getAmount(FluidState state) {
         return 5;
     }
 
     @Override
-    public int getTickRate(WorldView worldView) {
+    public int getTickDelay(LevelReader worldView) {
         return properties.tickRate;
     }
 
     @Override
-    protected float getBlastResistance() {
+    protected float getExplosionResistance() {
         return properties.explosionResistance;
     }
 
     @Override
-    protected BlockState toBlockState(FluidState state) {
-        return properties.block.get().getDefaultState().with(FluidBlock.LEVEL, getBlockStateLevel(state));
+    public BlockState createLegacyBlock(FluidState state) {
+        return properties.block.get().defaultBlockState().setValue(LiquidBlock.LEVEL, getLegacyLevel(state));
     }
 
     @Override
-    public boolean isStill(FluidState state) {
+    public boolean isSource(FluidState state) {
         return false;
     }
 
@@ -141,18 +141,18 @@ public class ChemicalFluid extends FlowableFluid {
         }
 
         @Override
-        protected void appendProperties(StateManager.Builder<Fluid, FluidState> builder) {
-            super.appendProperties(builder);
+        protected void createFluidStateDefinition(StateDefinition.Builder<Fluid, FluidState> builder) {
+            super.createFluidStateDefinition(builder);
             builder.add(LEVEL);
         }
 
         @Override
-        public int getLevel(FluidState fluidState) {
-            return fluidState.get(LEVEL);
+        public int getAmount(FluidState fluidState) {
+            return fluidState.getValue(LEVEL);
         }
 
         @Override
-        public boolean isStill(FluidState fluidState) {
+        public boolean isSource(FluidState fluidState) {
             return false;
         }
     }
@@ -164,12 +164,12 @@ public class ChemicalFluid extends FlowableFluid {
         }
 
         @Override
-        public int getLevel(FluidState fluidState) {
+        public int getAmount(FluidState fluidState) {
             return 8;
         }
 
         @Override
-        public boolean isStill(FluidState fluidState) {
+        public boolean isSource(FluidState fluidState) {
             return true;
         }
     }
@@ -179,7 +179,7 @@ public class ChemicalFluid extends FlowableFluid {
         private final Supplier<? extends Fluid> still;
         private final Supplier<? extends Fluid> flowing;
         private Supplier<? extends Item> bucket;
-        private Supplier<? extends FluidBlock> block;
+        private Supplier<? extends LiquidBlock> block;
         private int slopeFindDistance = 4;
         private int levelDecreasePerBlock = 1;
         private float explosionResistance = 100.0F;
@@ -199,7 +199,7 @@ public class ChemicalFluid extends FlowableFluid {
             return this;
         }
 
-        public Properties block(Supplier<? extends FluidBlock> block)
+        public Properties block(Supplier<? extends LiquidBlock> block)
         {
             this.block = block;
             return this;

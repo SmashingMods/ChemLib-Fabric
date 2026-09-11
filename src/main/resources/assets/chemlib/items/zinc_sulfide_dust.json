@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/zinc_sulfide_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12436621
+      }
+    ]
+  }
+}

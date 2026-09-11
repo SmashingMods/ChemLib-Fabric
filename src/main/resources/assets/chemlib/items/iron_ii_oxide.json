@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/iron_ii_oxide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 3092271
+      }
+    ]
+  }
+}

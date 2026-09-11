@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:ruthenium_ingot"
+  },
+  "result": {
+    "id": "chemlib:ruthenium_metal_block"
+  }
+}

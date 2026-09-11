@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/methane",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13115060
+      }
+    ]
+  }
+}

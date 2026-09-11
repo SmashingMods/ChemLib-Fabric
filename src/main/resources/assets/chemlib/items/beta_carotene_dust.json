@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/beta_carotene_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 16747560
+      }
+    ]
+  }
+}

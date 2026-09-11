@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/beryl",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 11654847
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/chromium_plate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 4725341
+      }
+    ]
+  }
+}

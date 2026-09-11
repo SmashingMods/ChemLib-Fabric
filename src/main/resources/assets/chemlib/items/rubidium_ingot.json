@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/rubidium_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15632637
+      }
+    ]
+  }
+}

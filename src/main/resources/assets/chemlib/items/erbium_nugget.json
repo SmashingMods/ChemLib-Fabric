@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/erbium_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10508136
+      }
+    ]
+  }
+}

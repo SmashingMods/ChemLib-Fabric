@@ -1,0 +1,15 @@
+{
+  "model": {
+    "type": "chemlib:element",
+    "base": {
+      "type": "minecraft:model",
+      "model": "chemlib:item/element_liquid_model",
+      "tints": [
+        {
+          "type": "minecraft:constant",
+          "value": 10884609
+        }
+      ]
+    }
+  }
+}

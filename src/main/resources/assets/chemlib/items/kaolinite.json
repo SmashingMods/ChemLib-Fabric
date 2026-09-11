@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/kaolinite",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10788826
+      }
+    ]
+  }
+}

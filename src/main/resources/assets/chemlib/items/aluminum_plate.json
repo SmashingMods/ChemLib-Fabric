@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/aluminum_plate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 14277081
+      }
+    ]
+  }
+}

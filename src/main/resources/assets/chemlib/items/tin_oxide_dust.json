@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/tin_oxide_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8692174
+      }
+    ]
+  }
+}

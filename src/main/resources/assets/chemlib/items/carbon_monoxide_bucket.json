@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/carbon_monoxide_bucket",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 4539987
+      }
+    ]
+  }
+}

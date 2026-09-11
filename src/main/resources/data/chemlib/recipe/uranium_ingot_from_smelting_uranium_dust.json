@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": "chemlib:uranium_dust",
+  "result": {
+    "id": "chemlib:uranium_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

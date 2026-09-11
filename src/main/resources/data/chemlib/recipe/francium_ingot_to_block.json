@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:francium_ingot"
+  },
+  "result": {
+    "id": "chemlib:francium_metal_block"
+  }
+}

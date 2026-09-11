@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": "chemlib:palladium_dust",
+  "result": {
+    "id": "chemlib:palladium_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 100
+}

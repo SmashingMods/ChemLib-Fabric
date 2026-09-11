@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/samarium_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12038236
+      }
+    ]
+  }
+}

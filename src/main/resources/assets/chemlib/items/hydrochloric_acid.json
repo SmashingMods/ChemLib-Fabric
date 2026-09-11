@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/hydrochloric_acid",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 255
+      }
+    ]
+  }
+}

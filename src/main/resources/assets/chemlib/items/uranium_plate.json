@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/uranium_plate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13747006
+      }
+    ]
+  }
+}

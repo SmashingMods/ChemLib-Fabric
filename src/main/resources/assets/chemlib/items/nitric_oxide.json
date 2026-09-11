@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/nitric_oxide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 4290760
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/urea_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15134900
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": "chemlib:dysprosium_nugget"
+  },
+  "result": {
+    "id": "chemlib:dysprosium_ingot"
+  }
+}

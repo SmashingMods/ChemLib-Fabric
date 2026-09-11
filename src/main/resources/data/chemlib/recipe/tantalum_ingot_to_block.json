@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:tantalum_ingot"
+  },
+  "result": {
+    "id": "chemlib:tantalum_metal_block"
+  }
+}

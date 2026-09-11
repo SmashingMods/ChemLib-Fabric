@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/acetylsalicylic_acid_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8568575
+      }
+    ]
+  }
+}

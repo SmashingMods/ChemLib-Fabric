@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/starch_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 16576422
+      }
+    ]
+  }
+}

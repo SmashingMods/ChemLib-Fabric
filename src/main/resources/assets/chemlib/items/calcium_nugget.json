@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/calcium_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 14406343
+      }
+    ]
+  }
+}

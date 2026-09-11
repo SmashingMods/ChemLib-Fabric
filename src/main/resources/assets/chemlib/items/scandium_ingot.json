@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/scandium_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 16580451
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/nickel_plate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 6452812
+      }
+    ]
+  }
+}

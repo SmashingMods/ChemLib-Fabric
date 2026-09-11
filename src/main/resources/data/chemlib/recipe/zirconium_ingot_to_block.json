@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:zirconium_ingot"
+  },
+  "result": {
+    "id": "chemlib:zirconium_metal_block"
+  }
+}

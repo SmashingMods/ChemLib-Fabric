@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": "chemlib:potassium_dust",
+  "result": {
+    "id": "chemlib:potassium_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 100
+}

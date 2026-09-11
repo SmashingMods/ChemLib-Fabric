@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/magnesium_plate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15576556
+      }
+    ]
+  }
+}

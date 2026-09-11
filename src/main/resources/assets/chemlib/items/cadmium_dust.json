@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/cadmium_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10103604
+      }
+    ]
+  }
+}

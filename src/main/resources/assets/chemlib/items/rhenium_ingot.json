@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/rhenium_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 1776923
+      }
+    ]
+  }
+}

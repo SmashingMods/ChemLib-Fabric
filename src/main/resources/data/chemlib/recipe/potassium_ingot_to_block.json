@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:potassium_ingot"
+  },
+  "result": {
+    "id": "chemlib:potassium_metal_block"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": "chemlib:cobalt_nugget"
+  },
+  "result": {
+    "id": "chemlib:cobalt_ingot"
+  }
+}

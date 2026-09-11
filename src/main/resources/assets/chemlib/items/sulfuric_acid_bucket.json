@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/sulfuric_acid_bucket",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 9871370
+      }
+    ]
+  }
+}

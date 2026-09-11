@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/iodine_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 5706082
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/aluminum_hydroxide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15557691
+      }
+    ]
+  }
+}

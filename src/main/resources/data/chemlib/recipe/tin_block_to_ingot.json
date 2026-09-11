@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "chemlib:tin_metal_block"
+  ],
+  "result": {
+    "count": 9,
+    "id": "chemlib:tin_ingot"
+  }
+}

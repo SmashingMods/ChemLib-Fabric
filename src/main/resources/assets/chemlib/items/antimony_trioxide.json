@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/antimony_trioxide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 16449480
+      }
+    ]
+  }
+}

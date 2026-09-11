@@ -1,8 +1,8 @@
 package com.smashingmods.chemlib.api;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
 
-public enum MatterState implements StringIdentifiable {
+public enum MatterState implements StringRepresentable {
     SOLID("solid"),
     LIQUID("liquid"),
     GAS("gas");
@@ -13,8 +13,10 @@ public enum MatterState implements StringIdentifiable {
         this.state = pState;
     }
 
+    public String asString() { return getSerializedName(); }
+
     @Override
-    public String asString() {
+    public String getSerializedName() {
         return state;
     }
 }

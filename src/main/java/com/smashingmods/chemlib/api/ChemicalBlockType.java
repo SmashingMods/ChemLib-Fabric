@@ -1,8 +1,8 @@
 package com.smashingmods.chemlib.api;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
 
-public enum ChemicalBlockType implements StringIdentifiable {
+public enum ChemicalBlockType implements StringRepresentable {
     METAL("metal"),
     LAMP("lamp");
 
@@ -12,8 +12,10 @@ public enum ChemicalBlockType implements StringIdentifiable {
         this.type = pType;
     }
 
+    public String asString() { return getSerializedName(); }
+
     @Override
-    public String asString() {
+    public String getSerializedName() {
         return type;
     }
 }

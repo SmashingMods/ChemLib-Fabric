@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/sucrose",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 14734802
+      }
+    ]
+  }
+}

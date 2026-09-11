@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/neodymium_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 9202027
+      }
+    ]
+  }
+}

@@ -4,39 +4,35 @@ import com.smashingmods.chemlib.client.PeriodicTableScreen;
 import com.smashingmods.chemlib.registry.ItemRegistry;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Hand;
-import net.minecraft.util.TypedActionResult;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
+import net.minecraft.world.item.Item;
+import net.minecraft.client.Minecraft;
+import net.minecraft.world.item.Item.TooltipContext;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.level.Level;
 
 public class PeriodicTableItem extends Item {
 
     public PeriodicTableItem() {
-        super(new FabricItemSettings().group(ItemRegistry.MISC_TAB).maxCount(1));
+        super(ItemRegistry.itemProperties("periodic_table").stacksTo(1));
     }
 
     @Override
     @Environment(EnvType.CLIENT)
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (world.isClient()) {
-            MinecraftClient.getInstance().setScreen(new PeriodicTableScreen());
+    public InteractionResult use(Level world, Player user, InteractionHand hand) {
+        if (world.isClientSide()) {
+            Minecraft.getInstance().gui.setScreen(new PeriodicTableScreen());
         }
-        return TypedActionResult.success(user.getStackInHand(hand));
+        return InteractionResult.SUCCESS;
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
-        tooltip.add(Text.translatable("item.chemlib.periodic_table.tooltip").formatted(Formatting.DARK_AQUA));
+    public void appendHoverText(ItemStack stack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, net.minecraft.world.item.TooltipFlag flag) {
+        super.appendHoverText(stack, context, display, tooltip, flag);
+        tooltip.accept(Component.translatable("item.chemlib.periodic_table.tooltip").withStyle(ChatFormatting.DARK_AQUA));
     }
 }

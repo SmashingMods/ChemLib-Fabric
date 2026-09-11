@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": "chemlib:ytterbium_dust",
+  "result": {
+    "id": "chemlib:ytterbium_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 100
+}

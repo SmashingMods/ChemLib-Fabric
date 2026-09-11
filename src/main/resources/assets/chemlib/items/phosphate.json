@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/phosphate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13605203
+      }
+    ]
+  }
+}

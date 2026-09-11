@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/sodium_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13878915
+      }
+    ]
+  }
+}

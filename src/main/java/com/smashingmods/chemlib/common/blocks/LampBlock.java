@@ -1,64 +1,60 @@
 package com.smashingmods.chemlib.common.blocks;
 
-import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.BooleanProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.resources.Identifier;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
 
-import javax.annotation.Nullable;
-import javax.annotation.ParametersAreNonnullByDefault;
+import org.jetbrains.annotations.Nullable;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 public class LampBlock extends ChemicalBlock {
 
-    private static final BooleanProperty LIT = Properties.LIT;
+    private static final BooleanProperty LIT = BlockStateProperties.LIT;
 
-    public LampBlock(Identifier chemical, ChemicalBlockType type, FabricBlockSettings properties) {
+    public LampBlock(Identifier chemical, ChemicalBlockType type, BlockBehaviour.Properties properties) {
         super(chemical, type, properties);
     }
 
     @Nullable
     @Override
-    public BlockState getPlacementState(ItemPlacementContext ctx) {
-        return this.getDefaultState().with(LIT, ctx.getWorld().isReceivingRedstonePower(ctx.getBlockPos()));
+    public BlockState getStateForPlacement(BlockPlaceContext ctx) {
+        return this.defaultBlockState().setValue(LIT, ctx.getLevel().hasNeighborSignal(ctx.getClickedPos()));
     }
 
     @Override
-    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
-        super.neighborUpdate(state, world, pos, sourceBlock, sourcePos, notify);
-        if (!world.isClient()) {
-            boolean flag = state.get(LIT);
-            if (flag != world.isReceivingRedstonePower(pos)) {
+    public void neighborChanged(BlockState state, Level world, BlockPos pos, Block sourceBlock, net.minecraft.world.level.redstone.Orientation orientation, boolean notify) {
+        super.neighborChanged(state, world, pos, sourceBlock, orientation, notify);
+        if (!world.isClientSide()) {
+            boolean flag = state.getValue(LIT);
+            if (flag != world.hasNeighborSignal(pos)) {
                 if (flag) {
-                    world.createAndScheduleBlockTick(pos, this, 4);
+                    world.scheduleTick(pos, this, 4);
                 } else {
-                    world.setBlockState(pos, state.cycle(LIT), 2);
+                    world.setBlock(pos, state.cycle(LIT), 2);
                 }
             }
         }
     }
 
     @Override
-    public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, net.minecraft.util.math.random.Random random) {
-        super.scheduledTick(state, world, pos, random);
-        if (state.get(LIT) && !world.isReceivingRedstonePower(pos)) {
-            world.setBlockState(pos, state.cycle(LIT), 2);
+    public void tick(BlockState state, ServerLevel world, BlockPos pos, net.minecraft.util.RandomSource random) {
+        super.tick(state, world, pos, random);
+        if (state.getValue(LIT) && !world.hasNeighborSignal(pos)) {
+            world.setBlock(pos, state.cycle(LIT), 2);
         }
     }
 
     @Override
-    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        super.appendProperties(builder);
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        super.createBlockStateDefinition(builder);
         builder.add(LIT);
     }
 }

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/strontium_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 5466520
+      }
+    ]
+  }
+}

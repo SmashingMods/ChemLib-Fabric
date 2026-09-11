@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/niobium_plate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 7556436
+      }
+    ]
+  }
+}

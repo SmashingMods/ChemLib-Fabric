@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/radium_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 3972207
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/potassium_cyanide_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13015135
+      }
+    ]
+  }
+}

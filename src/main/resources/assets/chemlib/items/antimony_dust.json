@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/antimony_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8738672
+      }
+    ]
+  }
+}

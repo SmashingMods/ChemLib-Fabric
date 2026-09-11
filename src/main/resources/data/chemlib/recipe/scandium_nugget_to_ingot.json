@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": "chemlib:scandium_nugget"
+  },
+  "result": {
+    "id": "chemlib:scandium_ingot"
+  }
+}

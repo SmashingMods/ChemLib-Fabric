@@ -1,13 +1,13 @@
 package com.smashingmods.chemlib.common.fluids;
 
-import net.minecraft.block.FluidBlock;
-import net.minecraft.fluid.FlowableFluid;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.material.FlowingFluid;
 
-public class ChemicalFluidBlock extends FluidBlock {
+public class ChemicalFluidBlock extends LiquidBlock {
 
     private final int color;
 
-    public ChemicalFluidBlock(FlowableFluid fluid, Settings settings, int color) {
+    public ChemicalFluidBlock(FlowingFluid fluid, Properties settings, int color) {
         super(fluid, settings);
         this.color = color;
     }

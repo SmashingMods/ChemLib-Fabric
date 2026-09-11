@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/copper_nitrate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 16751134
+      }
+    ]
+  }
+}
