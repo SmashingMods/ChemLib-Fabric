@@ -11,7 +11,7 @@ This branch targets **Minecraft Java 26.2**, **Java 25**, **Fabric Loader 0.19.5
 
 The port preserves the chemical definitions, registry identifiers, textures, recipe quantities, fluid flow settings, redstone lamp timing, four creative tabs, element labels, and periodic table screen and painting. It contains 800 registered items (including 118 elements and 175 compounds), 105 blocks, 37 fluid pairs, and 387 recipes.
 
-Build with `./gradlew build` (`gradlew.bat build` on Windows). The installable mod is `build/libs/ChemLib-1.0.1+mc26.2.jar`; put it alongside Fabric API in the Minecraft 26.2 instance's `mods` folder.
+Build with `./gradlew build` (`gradlew.bat build` on Windows). The installable mod is `build/libs/ChemLib-1.0.2+mc26.2.jar`; put it alongside Fabric API in the Minecraft 26.2 instance's `mods` folder.
 
 Run `./gradlew runGameTest` for server-side content, recipes, creative tabs, block drops, mining requirements, and lamp timing checks. Run `./gradlew runClientGameTest` on a machine with graphics support for model loading and screenshots of the item gallery and periodic table. These tests use temporary worlds under `build/run/` and are excluded from the published mod.
 
