@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:lead_ingot"
+  },
+  "result": {
+    "id": "chemlib:lead_metal_block"
+  }
+}

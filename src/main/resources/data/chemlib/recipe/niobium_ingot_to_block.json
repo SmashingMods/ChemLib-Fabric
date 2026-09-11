@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:niobium_ingot"
+  },
+  "result": {
+    "id": "chemlib:niobium_metal_block"
+  }
+}

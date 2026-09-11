@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/nitrogen_dioxide_bucket",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12141575
+      }
+    ]
+  }
+}

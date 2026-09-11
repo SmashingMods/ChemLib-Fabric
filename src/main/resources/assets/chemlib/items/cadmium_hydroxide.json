@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/cadmium_hydroxide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10523507
+      }
+    ]
+  }
+}

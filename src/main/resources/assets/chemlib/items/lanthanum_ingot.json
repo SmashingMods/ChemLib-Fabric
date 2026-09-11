@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/lanthanum_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12226912
+      }
+    ]
+  }
+}

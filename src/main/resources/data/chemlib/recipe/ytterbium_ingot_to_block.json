@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:ytterbium_ingot"
+  },
+  "result": {
+    "id": "chemlib:ytterbium_metal_block"
+  }
+}

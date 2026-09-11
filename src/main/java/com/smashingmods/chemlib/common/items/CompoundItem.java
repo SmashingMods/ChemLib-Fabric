@@ -1,25 +1,17 @@
 package com.smashingmods.chemlib.common.items;
 
-import com.mojang.logging.annotations.MethodsReturnNonnullByDefault;
 import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.registry.ItemRegistry;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.TooltipContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
 
-import javax.annotation.ParametersAreNonnullByDefault;
-import java.util.List;
 import java.util.Map;
 
-@MethodsReturnNonnullByDefault
-@ParametersAreNonnullByDefault
 public class CompoundItem extends Item implements Chemical {
 
     private final String compoundName;
@@ -30,7 +22,7 @@ public class CompoundItem extends Item implements Chemical {
     private final int color;
 
     public CompoundItem(String pCompoundName, MatterState pMatterState, Map<String, Integer> pComponents, String pDescription, String pColor) {
-        super(new FabricItemSettings().group(ItemRegistry.COMPOUNDS_TAB));
+        super(ItemRegistry.itemProperties(pCompoundName));
         this.compoundName = pCompoundName;
         this.matterState = pMatterState;
         this.components = pComponents;
@@ -39,9 +31,9 @@ public class CompoundItem extends Item implements Chemical {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
-        tooltip.add(Text.literal(getAbbreviation()).setStyle(Style.EMPTY.withColor(Formatting.DARK_AQUA)));
+    public void appendHoverText(ItemStack stack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, net.minecraft.world.item.TooltipFlag flag) {
+        super.appendHoverText(stack, context, display, tooltip, flag);
+        tooltip.accept(Component.literal(getAbbreviation()).setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_AQUA)));
     }
 
     @Override

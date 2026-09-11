@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:tin_ingot"
+  },
+  "result": {
+    "id": "chemlib:tin_metal_block"
+  }
+}

@@ -5,21 +5,23 @@ import com.smashingmods.chemlib.common.fluids.ChemicalFluid;
 import com.smashingmods.chemlib.common.fluids.ChemicalFluidBlock;
 import com.smashingmods.chemlib.common.fluids.ChemicalBucketItem;
 import com.smashingmods.chemlib.api.FluidAttributes;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Material;
-import net.minecraft.item.Items;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.item.Items;
+import net.minecraft.resources.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FluidRegistry {
 
-    public static final Identifier STILL = new Identifier("block/water_still");
-    public static final Identifier FLOWING = new Identifier("block/water_flow");
-    public static final Identifier OVERLAY = new Identifier("block/water_overlay");
+    public static final Identifier STILL = Identifier.withDefaultNamespace("block/water_still");
+    public static final Identifier FLOWING = Identifier.withDefaultNamespace("block/water_flow");
+    public static final Identifier OVERLAY = Identifier.withDefaultNamespace("block/water_overlay");
 
     public static final List<ChemicalFluid> FLUIDS = new ArrayList<>();
     public static final List<ChemicalFluidBlock> LIQUID_BLOCKS = new ArrayList<>();
@@ -37,8 +39,8 @@ public class FluidRegistry {
         fluidSource.updateProperties(ref.properties);
         fluidFlowing.updateProperties(ref.properties);
 
-        ChemicalFluidBlock liquidBlock = new ChemicalFluidBlock(fluidSource, FabricBlockSettings.of(Material.WATER).noCollision().strength(100f).dropsNothing(), attributes.color);
-        ChemicalBucketItem bucket = new ChemicalBucketItem(fluidSource, new FabricItemSettings().group(ItemRegistry.MISC_TAB).recipeRemainder(Items.BUCKET).maxCount(1), attributes.color);
+        ChemicalFluidBlock liquidBlock = new ChemicalFluidBlock(fluidSource, BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(ChemLib.MOD_ID, name + "_liquid_block"))), attributes.color);
+        ChemicalBucketItem bucket = new ChemicalBucketItem(fluidSource, ItemRegistry.itemProperties(name + "_bucket").craftRemainder(Items.BUCKET).stacksTo(1), attributes.color);
 
         ref.properties.slopeFindDistance(pSlopeFindDistance)
                 .levelDecreasePerBlock(pDecreasePerBlock)
@@ -52,10 +54,10 @@ public class FluidRegistry {
         LIQUID_BLOCKS.add(liquidBlock);
         BUCKETS.add(bucket);
 
-        Registry.register(Registry.FLUID, new Identifier(ChemLib.MOD_ID, String.format("%s_source", name)), fluidSource);
-        Registry.register(Registry.FLUID, new Identifier(ChemLib.MOD_ID, String.format("%s_flowing", name)), fluidFlowing);
-        Registry.register(Registry.BLOCK, new Identifier(ChemLib.MOD_ID, String.format("%s_liquid_block", name)), liquidBlock);
-        Registry.register(Registry.ITEM, new Identifier(ChemLib.MOD_ID, String.format("%s_bucket", name)), bucket);
+        Registry.register(BuiltInRegistries.FLUID, Identifier.fromNamespaceAndPath(ChemLib.MOD_ID, String.format("%s_source", name)), fluidSource);
+        Registry.register(BuiltInRegistries.FLUID, Identifier.fromNamespaceAndPath(ChemLib.MOD_ID, String.format("%s_flowing", name)), fluidFlowing);
+        Registry.register(BuiltInRegistries.BLOCK, Identifier.fromNamespaceAndPath(ChemLib.MOD_ID, String.format("%s_liquid_block", name)), liquidBlock);
+        Registry.register(BuiltInRegistries.ITEM, Identifier.fromNamespaceAndPath(ChemLib.MOD_ID, String.format("%s_bucket", name)), bucket);
     }
 
     public static List<ChemicalFluid> getFluids() {

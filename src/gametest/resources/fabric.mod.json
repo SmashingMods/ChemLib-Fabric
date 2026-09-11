@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "id": "chemlib-test",
+  "version": "1.0.0",
+  "name": "ChemLib compatibility tests",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-gametest": [
+      "com.smashingmods.chemlib.test.ChemLibGameTest"
+    ],
+    "fabric-client-gametest": [
+      "com.smashingmods.chemlib.test.ChemLibClientTest"
+    ]
+  }
+}

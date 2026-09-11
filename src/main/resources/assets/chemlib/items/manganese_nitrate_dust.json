@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/manganese_nitrate_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 16759538
+      }
+    ]
+  }
+}

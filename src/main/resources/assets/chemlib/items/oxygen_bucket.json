@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/oxygen_bucket",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8703998
+      }
+    ]
+  }
+}

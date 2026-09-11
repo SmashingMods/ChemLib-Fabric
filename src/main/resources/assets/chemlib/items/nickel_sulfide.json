@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/nickel_sulfide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13016482
+      }
+    ]
+  }
+}

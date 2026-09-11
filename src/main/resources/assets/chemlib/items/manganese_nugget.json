@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/manganese_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13083525
+      }
+    ]
+  }
+}

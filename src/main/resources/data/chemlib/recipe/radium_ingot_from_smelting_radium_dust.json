@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": "chemlib:radium_dust",
+  "result": {
+    "id": "chemlib:radium_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

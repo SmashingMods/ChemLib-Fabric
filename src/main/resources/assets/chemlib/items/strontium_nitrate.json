@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/strontium_nitrate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13522968
+      }
+    ]
+  }
+}

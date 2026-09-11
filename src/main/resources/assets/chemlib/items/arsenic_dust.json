@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/arsenic_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 9191217
+      }
+    ]
+  }
+}

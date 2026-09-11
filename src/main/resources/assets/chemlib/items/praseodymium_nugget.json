@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/praseodymium_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 7584061
+      }
+    ]
+  }
+}

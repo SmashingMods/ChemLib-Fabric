@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/aluminum_nitrate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 16215621
+      }
+    ]
+  }
+}

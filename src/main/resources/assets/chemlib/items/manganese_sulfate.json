@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/manganese_sulfate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 14793458
+      }
+    ]
+  }
+}

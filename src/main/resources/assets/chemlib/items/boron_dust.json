@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/boron_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 4082272
+      }
+    ]
+  }
+}

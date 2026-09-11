@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/ruthenium_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 7429987
+      }
+    ]
+  }
+}

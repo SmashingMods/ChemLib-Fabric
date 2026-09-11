@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/barium_plate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13089960
+      }
+    ]
+  }
+}

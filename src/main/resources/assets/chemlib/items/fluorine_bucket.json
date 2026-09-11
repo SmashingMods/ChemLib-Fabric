@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/fluorine_bucket",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 11850059
+      }
+    ]
+  }
+}

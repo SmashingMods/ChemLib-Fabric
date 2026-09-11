@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/calcium_sulfate_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 14406343
+      }
+    ]
+  }
+}

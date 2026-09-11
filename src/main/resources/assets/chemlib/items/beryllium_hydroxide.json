@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/beryllium_hydroxide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12109792
+      }
+    ]
+  }
+}

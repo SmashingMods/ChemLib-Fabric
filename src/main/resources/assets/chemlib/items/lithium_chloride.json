@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/lithium_chloride",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 2661974
+      }
+    ]
+  }
+}

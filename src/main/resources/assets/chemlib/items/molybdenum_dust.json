@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/molybdenum_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 7175834
+      }
+    ]
+  }
+}

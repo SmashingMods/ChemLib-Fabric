@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/zinc_carbonate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12436621
+      }
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:thorium_ingot"
+  },
+  "result": {
+    "id": "chemlib:thorium_metal_block"
+  }
+}

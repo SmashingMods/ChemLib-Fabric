@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/gold_plate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13610040
+      }
+    ]
+  }
+}

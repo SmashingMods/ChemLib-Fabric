@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/hydrogen_sulfide_bucket",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 15784990
+      }
+    ]
+  }
+}

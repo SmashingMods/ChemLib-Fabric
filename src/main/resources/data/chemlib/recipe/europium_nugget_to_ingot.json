@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": "chemlib:europium_nugget"
+  },
+  "result": {
+    "id": "chemlib:europium_ingot"
+  }
+}

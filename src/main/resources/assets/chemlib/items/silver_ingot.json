@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/silver_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12699591
+      }
+    ]
+  }
+}

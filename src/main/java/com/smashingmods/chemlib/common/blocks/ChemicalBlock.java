@@ -3,26 +3,24 @@ package com.smashingmods.chemlib.common.blocks;
 import com.smashingmods.chemlib.api.Chemical;
 import com.smashingmods.chemlib.api.ChemicalBlockType;
 import com.smashingmods.chemlib.api.MatterState;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.client.color.block.BlockColorProvider;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.resources.Identifier;
+import net.minecraft.core.registries.BuiltInRegistries;
 
 public class ChemicalBlock extends Block implements Chemical {
 
     private final Identifier chemical;
     private final ChemicalBlockType blockType;
 
-    public ChemicalBlock(Identifier chemical, ChemicalBlockType blockType, FabricBlockSettings properties) {
+    public ChemicalBlock(Identifier chemical, ChemicalBlockType blockType, BlockBehaviour.Properties properties) {
         super(properties);
         this.chemical = chemical;
         this.blockType = blockType;
     }
 
     public Chemical getChemical() {
-        return (Chemical) Registry.ITEM.get(chemical);
+        return (Chemical) BuiltInRegistries.ITEM.getValue(chemical);
     }
 
     public ChemicalBlockType getBlockType() {
@@ -54,7 +52,4 @@ public class ChemicalBlock extends Block implements Chemical {
         return getChemical().getColor();
     }
 
-    public BlockColorProvider getBlockColor(ItemStack pItemStack, int pTintIndex) {
-        return (pState, pLevel, pPos, pTintIndex1) -> getChemical().getColor();
-    }
 }

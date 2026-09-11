@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/tin_sulfate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8692174
+      }
+    ]
+  }
+}

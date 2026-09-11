@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/bromine_bucket",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10884609
+      }
+    ]
+  }
+}

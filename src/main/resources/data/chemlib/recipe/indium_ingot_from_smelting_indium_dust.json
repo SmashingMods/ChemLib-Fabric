@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": "chemlib:indium_dust",
+  "result": {
+    "id": "chemlib:indium_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 200
+}

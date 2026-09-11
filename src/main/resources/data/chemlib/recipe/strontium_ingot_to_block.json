@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": "chemlib:strontium_ingot"
+  },
+  "result": {
+    "id": "chemlib:strontium_metal_block"
+  }
+}

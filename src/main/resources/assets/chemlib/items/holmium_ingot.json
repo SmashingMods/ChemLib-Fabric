@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/holmium_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 5071698
+      }
+    ]
+  }
+}

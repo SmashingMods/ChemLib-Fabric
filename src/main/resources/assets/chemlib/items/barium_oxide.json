@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/barium_oxide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 56243
+      }
+    ]
+  }
+}

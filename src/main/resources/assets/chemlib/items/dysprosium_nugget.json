@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/dysprosium_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 6635278
+      }
+    ]
+  }
+}

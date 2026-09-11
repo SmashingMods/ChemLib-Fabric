@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/iron_iii_nitrate_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 8421504
+      }
+    ]
+  }
+}

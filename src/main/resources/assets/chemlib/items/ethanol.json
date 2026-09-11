@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/ethanol",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13826710
+      }
+    ]
+  }
+}

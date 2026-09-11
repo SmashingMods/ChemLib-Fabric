@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/beryllium_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 2204030
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": "chemlib:dysprosium_dust",
+  "result": {
+    "id": "chemlib:dysprosium_ingot"
+  },
+  "experience": 0.7,
+  "cookingtime": 100
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/potassium_permanganate",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 9658293
+      }
+    ]
+  }
+}

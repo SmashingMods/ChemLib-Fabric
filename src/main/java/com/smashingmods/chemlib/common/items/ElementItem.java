@@ -4,17 +4,12 @@ import com.smashingmods.chemlib.api.Element;
 import com.smashingmods.chemlib.api.MatterState;
 import com.smashingmods.chemlib.api.MetalType;
 import com.smashingmods.chemlib.registry.ItemRegistry;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Item.TooltipContext;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
 
 public class ElementItem extends Item implements Element {
 
@@ -29,7 +24,7 @@ public class ElementItem extends Item implements Element {
     private final int color;
 
     public ElementItem(String pChemicalName, int pAtomicNumber, String pAbbreviation, int pGroup, int pPeriod, MatterState pMatterState, MetalType pMetalType, boolean pArtificial, String pColor) {
-        super(new FabricItemSettings().group(ItemRegistry.ELEMENTS_TAB));
+        super(ItemRegistry.itemProperties(pChemicalName));
         this.elementName = pChemicalName;
         this.atomicNumber = pAtomicNumber;
         this.abbreviation = pAbbreviation;
@@ -42,11 +37,11 @@ public class ElementItem extends Item implements Element {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
-        tooltip.add(Text.literal(String.format("%s (%d)", getAbbreviation(), atomicNumber)).setStyle(Style.EMPTY.withColor(Formatting.DARK_AQUA)));
+    public void appendHoverText(ItemStack stack, TooltipContext context, net.minecraft.world.item.component.TooltipDisplay display, java.util.function.Consumer<Component> tooltip, net.minecraft.world.item.TooltipFlag flag) {
+        super.appendHoverText(stack, context, display, tooltip, flag);
+        tooltip.accept(Component.literal(String.format("%s (%d)", getAbbreviation(), atomicNumber)).setStyle(Style.EMPTY.withColor(ChatFormatting.DARK_AQUA)));
         if (!getGroupName().isEmpty()) {
-            tooltip.add(Text.literal(getGroupName()).setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
+            tooltip.accept(Component.literal(getGroupName()).setStyle(Style.EMPTY.withColor(ChatFormatting.GRAY)));
         }
     }
 

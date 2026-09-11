@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/praseodymium_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 7584061
+      }
+    ]
+  }
+}

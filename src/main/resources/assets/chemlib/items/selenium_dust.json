@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/selenium_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 490625
+      }
+    ]
+  }
+}

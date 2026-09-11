@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/antimony_trisulfide_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12686906
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/bismuth_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 4034949
+      }
+    ]
+  }
+}

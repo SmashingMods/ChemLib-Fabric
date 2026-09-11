@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/cerium_ingot",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 6696030
+      }
+    ]
+  }
+}

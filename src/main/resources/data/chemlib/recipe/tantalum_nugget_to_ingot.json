@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": "chemlib:tantalum_nugget"
+  },
+  "result": {
+    "id": "chemlib:tantalum_ingot"
+  }
+}

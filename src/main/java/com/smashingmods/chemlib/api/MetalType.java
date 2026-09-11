@@ -1,8 +1,8 @@
 package com.smashingmods.chemlib.api;
 
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
 
-public enum MetalType implements StringIdentifiable {
+public enum MetalType implements StringRepresentable {
     METAL("metal"),
     METALLOID("metalloid"),
     NONMETAL("nonmetal");
@@ -13,8 +13,10 @@ public enum MetalType implements StringIdentifiable {
         this.state = pState;
     }
 
+    public String asString() { return getSerializedName(); }
+
     @Override
-    public String asString() {
+    public String getSerializedName() {
         return state;
     }
 }

@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/sodium_carbonate_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 13878915
+      }
+    ]
+  }
+}

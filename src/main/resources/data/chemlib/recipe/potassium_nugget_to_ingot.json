@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": "chemlib:potassium_nugget"
+  },
+  "result": {
+    "id": "chemlib:potassium_ingot"
+  }
+}

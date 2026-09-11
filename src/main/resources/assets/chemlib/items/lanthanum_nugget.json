@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/lanthanum_nugget",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 12226912
+      }
+    ]
+  }
+}

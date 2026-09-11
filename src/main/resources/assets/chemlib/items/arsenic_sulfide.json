@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/arsenic_sulfide",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 16409730
+      }
+    ]
+  }
+}

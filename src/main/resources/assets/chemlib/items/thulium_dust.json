@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/thulium_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 1547843
+      }
+    ]
+  }
+}

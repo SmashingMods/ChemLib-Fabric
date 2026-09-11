@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "chemlib:item/francium_dust",
+    "tints": [
+      {
+        "type": "minecraft:constant",
+        "value": 10109196
+      }
+    ]
+  }
+}
