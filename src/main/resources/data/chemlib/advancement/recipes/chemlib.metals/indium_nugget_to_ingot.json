@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:indium_nugget_to_ingot"
+        "recipes": "chemlib:indium_nugget_to_ingot"
       }
     }
   },

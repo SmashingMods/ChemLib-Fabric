@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:iridium_block_to_ingot"
+        "recipes": "chemlib:iridium_block_to_ingot"
       }
     }
   },

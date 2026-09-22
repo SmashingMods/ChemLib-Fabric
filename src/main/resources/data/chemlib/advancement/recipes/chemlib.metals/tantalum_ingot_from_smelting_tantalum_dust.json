@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:tantalum_ingot_from_smelting_tantalum_dust"
+        "recipes": "chemlib:tantalum_ingot_from_smelting_tantalum_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:thorium_ingot_from_blasting_thorium_dust"
+        "recipes": "chemlib:thorium_ingot_from_blasting_thorium_dust"
       }
     }
   },

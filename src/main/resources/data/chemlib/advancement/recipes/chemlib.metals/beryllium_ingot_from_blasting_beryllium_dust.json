@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:beryllium_ingot_from_blasting_beryllium_dust"
+        "recipes": "chemlib:beryllium_ingot_from_blasting_beryllium_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:potassium_ingot_from_smelting_potassium_dust"
+        "recipes": "chemlib:potassium_ingot_from_smelting_potassium_dust"
       }
     }
   },

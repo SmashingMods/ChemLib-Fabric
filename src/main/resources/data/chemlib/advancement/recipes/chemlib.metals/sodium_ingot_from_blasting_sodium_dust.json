@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:sodium_ingot_from_blasting_sodium_dust"
+        "recipes": "chemlib:sodium_ingot_from_blasting_sodium_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:neon_lamp_block"
+        "recipes": "chemlib:neon_lamp_block"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:actinium_ingot_from_blasting_actinium_dust"
+        "recipes": "chemlib:actinium_ingot_from_blasting_actinium_dust"
       }
     }
   },

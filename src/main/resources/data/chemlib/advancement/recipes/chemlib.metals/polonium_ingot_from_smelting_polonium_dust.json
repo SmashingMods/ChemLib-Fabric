@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:polonium_ingot_from_smelting_polonium_dust"
+        "recipes": "chemlib:polonium_ingot_from_smelting_polonium_dust"
       }
     }
   },

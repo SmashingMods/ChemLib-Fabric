@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:cadmium_ingot_from_blasting_cadmium_dust"
+        "recipes": "chemlib:cadmium_ingot_from_blasting_cadmium_dust"
       }
     }
   },

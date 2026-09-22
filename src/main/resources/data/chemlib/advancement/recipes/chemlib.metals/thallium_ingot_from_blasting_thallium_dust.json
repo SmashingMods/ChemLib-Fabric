@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:thallium_ingot_from_blasting_thallium_dust"
+        "recipes": "chemlib:thallium_ingot_from_blasting_thallium_dust"
       }
     }
   },

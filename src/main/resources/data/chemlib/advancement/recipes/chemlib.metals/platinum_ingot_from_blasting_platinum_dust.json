@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:platinum_ingot_from_blasting_platinum_dust"
+        "recipes": "chemlib:platinum_ingot_from_blasting_platinum_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:zirconium_ingot_from_smelting_zirconium_dust"
+        "recipes": "chemlib:zirconium_ingot_from_smelting_zirconium_dust"
       }
     }
   },

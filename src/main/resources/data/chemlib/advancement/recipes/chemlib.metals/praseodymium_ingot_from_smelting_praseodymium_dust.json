@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:praseodymium_ingot_from_smelting_praseodymium_dust"
+        "recipes": "chemlib:praseodymium_ingot_from_smelting_praseodymium_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:osmium_ingot_to_block"
+        "recipes": "chemlib:osmium_ingot_to_block"
       }
     }
   },

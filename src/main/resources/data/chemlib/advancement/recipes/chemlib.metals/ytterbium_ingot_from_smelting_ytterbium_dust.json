@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:ytterbium_ingot_from_smelting_ytterbium_dust"
+        "recipes": "chemlib:ytterbium_ingot_from_smelting_ytterbium_dust"
       }
     }
   },

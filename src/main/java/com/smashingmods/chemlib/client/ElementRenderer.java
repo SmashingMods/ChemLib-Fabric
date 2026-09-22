@@ -59,16 +59,16 @@ public record ElementRenderer(ItemModel base) implements ItemModel {
             }
             case FIRST_PERSON_LEFT_HAND -> {
                 pose.translate(0, 0.02, 0.56);
-                pose.mulPose(Axis.YN.rotationDegrees(10));
+                pose.rotateDegrees(Axis.YN, 10);
                 pose.scale(0.75F, 0.75F, 0.75F);
             }
             case FIRST_PERSON_RIGHT_HAND -> {
                 pose.translate(0, 0.10, 0.56);
-                pose.mulPose(Axis.YP.rotationDegrees(10));
+                pose.rotateDegrees(Axis.YP, 10);
                 pose.scale(0.75F, 0.75F, 0.75F);
             }
             case HEAD -> {
-                pose.mulPose(Axis.YP.rotationDegrees(180));
+                pose.rotateDegrees(Axis.YP, 180);
                 pose.translate(0, -0.75, -0.75);
             }
             case GROUND -> {
@@ -76,7 +76,7 @@ public record ElementRenderer(ItemModel base) implements ItemModel {
                 pose.scale(0.8F, 0.8F, 0.8F);
             }
             case FIXED -> {
-                pose.mulPose(Axis.YN.rotationDegrees(180));
+                pose.rotateDegrees(Axis.YN, 180);
                 pose.translate(0.5, 0.5, 0);
             }
             default -> { }
@@ -99,12 +99,12 @@ public record ElementRenderer(ItemModel base) implements ItemModel {
                 pose.pushPose();
                 pose.translate(0.5, 0.5, 0);
                 // Preserve the original renderer's rotation (specified in radians).
-                pose.mulPose(Axis.XN.rotation(180));
+                pose.rotate(Axis.XN, 180);
                 pose.translate(-0.16, 0, -0.55);
                 pose.scale(0.05F, 0.08F, 0.08F);
                 if (frame) {
-                    pose.mulPose(Axis.YN.rotationDegrees(180));
-                    pose.mulPose(Axis.XN.rotationDegrees(53));
+                    pose.rotateDegrees(Axis.YN, 180);
+                    pose.rotateDegrees(Axis.XN, 53);
                     pose.translate(-8, -1, 1.7);
                     pose.scale(1, 0.65F, 1);
                 }

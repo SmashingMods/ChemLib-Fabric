@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:neodymium_block_to_ingot"
+        "recipes": "chemlib:neodymium_block_to_ingot"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:barium_ingot_from_blasting_barium_dust"
+        "recipes": "chemlib:barium_ingot_from_blasting_barium_dust"
       }
     }
   },

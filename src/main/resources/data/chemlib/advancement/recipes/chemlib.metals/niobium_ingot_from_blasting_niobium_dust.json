@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:niobium_ingot_from_blasting_niobium_dust"
+        "recipes": "chemlib:niobium_ingot_from_blasting_niobium_dust"
       }
     }
   },
