@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:nickel_ingot_to_nugget"
+        "recipes": "chemlib:nickel_ingot_to_nugget"
       }
     }
   },

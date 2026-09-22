@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:calcium_block_to_ingot"
+        "recipes": "chemlib:calcium_block_to_ingot"
       }
     }
   },

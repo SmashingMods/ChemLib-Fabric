@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:rhenium_ingot_from_blasting_rhenium_dust"
+        "recipes": "chemlib:rhenium_ingot_from_blasting_rhenium_dust"
       }
     }
   },

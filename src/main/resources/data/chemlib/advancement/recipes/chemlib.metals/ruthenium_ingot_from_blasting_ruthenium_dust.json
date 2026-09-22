@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:ruthenium_ingot_from_blasting_ruthenium_dust"
+        "recipes": "chemlib:ruthenium_ingot_from_blasting_ruthenium_dust"
       }
     }
   },

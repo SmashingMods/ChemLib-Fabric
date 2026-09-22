@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:magnesium_ingot_to_block"
+        "recipes": "chemlib:magnesium_ingot_to_block"
       }
     }
   },

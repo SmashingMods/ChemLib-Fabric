@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:gallium_nugget_to_ingot"
+        "recipes": "chemlib:gallium_nugget_to_ingot"
       }
     }
   },

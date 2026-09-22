@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:silver_ingot_from_smelting_silver_dust"
+        "recipes": "chemlib:silver_ingot_from_smelting_silver_dust"
       }
     }
   },

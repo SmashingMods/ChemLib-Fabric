@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:terbium_ingot_from_blasting_terbium_dust"
+        "recipes": "chemlib:terbium_ingot_from_blasting_terbium_dust"
       }
     }
   },

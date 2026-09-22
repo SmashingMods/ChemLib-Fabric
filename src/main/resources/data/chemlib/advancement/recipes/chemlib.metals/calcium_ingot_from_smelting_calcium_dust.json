@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:calcium_ingot_from_smelting_calcium_dust"
+        "recipes": "chemlib:calcium_ingot_from_smelting_calcium_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:holmium_ingot_from_blasting_holmium_dust"
+        "recipes": "chemlib:holmium_ingot_from_blasting_holmium_dust"
       }
     }
   },

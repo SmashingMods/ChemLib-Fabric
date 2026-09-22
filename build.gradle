@@ -1,5 +1,5 @@
 plugins {
-	id 'net.fabricmc.fabric-loom' version '1.17.20'
+	id 'net.fabricmc.fabric-loom' version '1.18.2'
 	id 'maven-publish'
 }
 
@@ -34,12 +34,12 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	// Minecraft 26.2 requires Java 25.
+	// Minecraft 26.3 requires Java 25.
 	it.options.release = 25
 }
 
 java {
-	// Publish sources alongside the unobfuscated Minecraft 26.2 artifact.
+	// Publish sources alongside the unobfuscated Minecraft 26.3 artifact.
 	withSourcesJar()
 }
 

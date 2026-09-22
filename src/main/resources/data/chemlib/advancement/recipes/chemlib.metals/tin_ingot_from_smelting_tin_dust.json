@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:tin_ingot_from_smelting_tin_dust"
+        "recipes": "chemlib:tin_ingot_from_smelting_tin_dust"
       }
     }
   },

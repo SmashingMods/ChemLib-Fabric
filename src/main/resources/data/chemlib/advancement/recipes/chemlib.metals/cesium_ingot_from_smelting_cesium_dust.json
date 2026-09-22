@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:cesium_ingot_from_smelting_cesium_dust"
+        "recipes": "chemlib:cesium_ingot_from_smelting_cesium_dust"
       }
     }
   },

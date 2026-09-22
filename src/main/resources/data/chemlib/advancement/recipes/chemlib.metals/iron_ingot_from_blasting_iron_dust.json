@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:iron_ingot_from_blasting_iron_dust"
+        "recipes": "chemlib:iron_ingot_from_blasting_iron_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:magnesium_ingot_from_blasting_magnesium_dust"
+        "recipes": "chemlib:magnesium_ingot_from_blasting_magnesium_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:neodymium_ingot_from_smelting_neodymium_dust"
+        "recipes": "chemlib:neodymium_ingot_from_smelting_neodymium_dust"
       }
     }
   },

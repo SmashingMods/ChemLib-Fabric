@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:tungsten_ingot_from_smelting_tungsten_dust"
+        "recipes": "chemlib:tungsten_ingot_from_smelting_tungsten_dust"
       }
     }
   },

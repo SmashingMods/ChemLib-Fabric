@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:periodic_table"
+        "recipes": "chemlib:periodic_table"
       }
     }
   },

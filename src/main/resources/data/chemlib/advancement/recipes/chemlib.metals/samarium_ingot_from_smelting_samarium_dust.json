@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:samarium_ingot_from_smelting_samarium_dust"
+        "recipes": "chemlib:samarium_ingot_from_smelting_samarium_dust"
       }
     }
   },

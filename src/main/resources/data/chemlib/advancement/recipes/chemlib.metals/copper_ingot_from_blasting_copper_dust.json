@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:copper_ingot_from_blasting_copper_dust"
+        "recipes": "chemlib:copper_ingot_from_blasting_copper_dust"
       }
     }
   },

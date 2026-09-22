@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:gallium_ingot_from_blasting_gallium_dust"
+        "recipes": "chemlib:gallium_ingot_from_blasting_gallium_dust"
       }
     }
   },

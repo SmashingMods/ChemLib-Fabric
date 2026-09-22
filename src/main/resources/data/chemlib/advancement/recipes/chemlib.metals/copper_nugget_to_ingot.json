@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:copper_nugget_to_ingot"
+        "recipes": "chemlib:copper_nugget_to_ingot"
       }
     }
   },

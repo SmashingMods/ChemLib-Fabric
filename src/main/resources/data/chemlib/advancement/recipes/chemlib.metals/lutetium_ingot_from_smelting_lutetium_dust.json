@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:lutetium_ingot_from_smelting_lutetium_dust"
+        "recipes": "chemlib:lutetium_ingot_from_smelting_lutetium_dust"
       }
     }
   },

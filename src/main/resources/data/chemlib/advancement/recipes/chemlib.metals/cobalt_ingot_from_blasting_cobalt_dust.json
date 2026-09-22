@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:cobalt_ingot_from_blasting_cobalt_dust"
+        "recipes": "chemlib:cobalt_ingot_from_blasting_cobalt_dust"
       }
     }
   },

@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:chromium_nugget_to_ingot"
+        "recipes": "chemlib:chromium_nugget_to_ingot"
       }
     }
   },

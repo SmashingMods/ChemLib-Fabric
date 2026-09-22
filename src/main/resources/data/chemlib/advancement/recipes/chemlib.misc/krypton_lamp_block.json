@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "chemlib:krypton_lamp_block"
+        "recipes": "chemlib:krypton_lamp_block"
       }
     }
   },
